@@ -56,11 +56,12 @@ ctrack.dosort=function(s)
 
 ctrack.setup=function(args)
 {
-	ctrack.q={};
-	window.location.search.substring(1).split("&").forEach(function(n){
-		var aa=n.split("=");
-		ctrack.q[aa[0]]=decodeURIComponent(aa[1]);
-	});
+	// console.log(args)
+	ctrack.q={country: "np"};
+	// window.location.search.substring(1).split("&").forEach(function(n){
+	// 	var aa=n.split("=");
+	// 	ctrack.q[aa[0]]=decodeURIComponent(aa[1]);
+	// });
 	
 	args=args || {};
 	args.jslib	=args.jslib 	|| "http://d-portal.org/jslib/"; // load stuff from here
