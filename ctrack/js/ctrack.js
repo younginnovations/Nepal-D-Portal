@@ -15,23 +15,51 @@ var ganal=require("./ganal.js");
 
 var iati_codes=require("../../dstore/json/iati_codes.json")
 
-
 // exports
 ctrack.savi_fixup=savi.fixup;
 ctrack.draw_chart=chart.draw;
+
+ctrack.url=function(url)
+{
+	if(ctrack.popout=="frame")
+	{
+//		console.log("popout "+url);
+		window.open(url);
+	}
+	else
+	{
+		window.location.hash=url;
+		return false;
+	}
+};
+
 
 ctrack.get_chart_data=function(name)
 {
 		return ctrack.chunk(name) || [];
 };
 
+ctrack.sortby="order";
+ctrack.dosort=function(s)
+{
+	if(ctrack.sortby==s) { s="-"+s; } // reverse on second click
+	ctrack.sortby=s;
+	if(ctrack.last_view)
+	{
+		var v=views[ctrack.last_view.toLowerCase()]
+		if(v && v.display)
+		{
+			v.display();
+		}
+	}
+};
 
 ctrack.setup=function(args)
 {
 	ctrack.q={};
 	window.location.search.substring(1).split("&").forEach(function(n){
 		var aa=n.split("=");
-		ctrack.q[aa[0]]=aa[1];
+		ctrack.q[aa[0]]=decodeURIComponent(aa[1]);
 	});
 	
 	args=args || {};
@@ -42,17 +70,93 @@ ctrack.setup=function(args)
 	
 	args.flavas=args.flavas || ["original","high"];
 	args.flava=args.flava || ctrack.q.flava || "original";
+	args.rgba=args.rgba || ctrack.q.rgba ;
 
-	args.css=args.css || [
-			args.art+args.flava+"/activities.css",
-			args.art+args.flava+"/ctrack.css"
+	if(!args.css) // can totally override with args
+	{
+		args.css=[
+				args.art+args.flava+"/activities.css",
+				args.art+args.flava+"/ctrack.css",
+				args.art+"chosen.min.css"
 		];
+		if(args.rgba) // only if given
+		{
+				args.css[args.css.length]=args.art+"rgba/"+args.rgba+".css";
+		}
+	}
 
 	if(args.css) { head.load(args.css); }
 	
 	ctrack.args=args;
 	
-	ctrack.crumbs=[{hash:"#view=main",view:"main"}];
+// temporary country force hack
+	if( ctrack.q.country )
+	{
+		var cc=ctrack.q.country.toLowerCase().split(","); // allow list
+		if(cc.length==1) { ctrack.q.country.toLowerCase().split("|"); }
+		args.country=cc[0].toLowerCase();
+		args.country_select=cc.join("|");
+		args.chunks["country_code"]=cc[0].toUpperCase();
+		args.chunks["country_name"]=iati_codes.country[ args.country.toUpperCase() ];
+		args.chunks["country_flag"]="{art}flag/"+args.country+".png";
+		args.chunks["background_image"]="{art}back/"+args.country+".jpg";
+	}
+	else
+	{
+		args.chunks["main_countrymin"]="";
+		args.chunks["main_country"]="";
+		args.chunks["main_country_head"]="";
+		args.chunks["main_country_map"]="";
+		args.chunks["country_name"]="";
+		args.chunks["back_country"]="";
+	}
+
+	if( ctrack.q.tongue ) // choose a new tongue
+	{
+		args.tongue=ctrack.q.tongue;
+	}
+
+	if( ctrack.q.publisher )
+	{
+		var cc=ctrack.q.publisher.split(","); // allow list
+		if(cc.length==1) { ctrack.q.publisher.split("|"); }
+		args.publisher=cc[0]; // case is important?
+		args.publisher_select=cc.join("|");
+		args.chunks["publisher_code"]=args.publisher;
+		args.chunks["publisher_name"]=iati_codes.publisher_names[args.publisher] || args.publisher;
+
+		var nn=0;
+		var cc="";
+		var ii=0;
+		for(i=0;i<args.chunks["publisher_name"].length;i++){ nn+=args.chunks["publisher_name"].charCodeAt(i); }
+		for(cc in iati_codes.crs_countries) { if(cc.length==2) { ii++; } }
+		nn=nn%ii;
+		for(cc in iati_codes.crs_countries) { if(cc.length==2) { nn-=1; if(nn==0) { break; } } }
+		args.chunks["background_image"]="{art}back/"+cc.toLowerCase()+".jpg";
+
+		args.chunks["main_countrymin"]="";
+		args.chunks["main_country"]="";
+		args.chunks["main_country_head"]="";
+	}
+	else
+	{
+		args.chunks["main_pubmin"]="";
+		args.chunks["main_publisher"]="";
+		args.chunks["main_publisher_head"]="";
+		args.chunks["main_publisher_map"]="";
+		args.chunks["publisher_name"]="";
+		args.chunks["back_publisher"]="";
+	}
+	
+	if(args.publisher)
+	{
+		ctrack.crumbs=[{hash:"#view=publisher",view:"publisher"}];
+	}
+	else
+	{
+		ctrack.crumbs=[{hash:"#view=main",view:"main"}];
+	}
+	
 	ctrack.setcrumb=function(idx)
 	{
 // try not to leave holes in the crumbs list, so align to left
@@ -76,28 +180,21 @@ ctrack.setup=function(args)
 			}
 			else
 			{
-				ctrack.chunk("crumb"+i+"_hash","#view=main");
-				ctrack.chunk("crumb"+i+"_view","main");
+				if(args.publisher)
+				{
+					ctrack.chunk("crumb"+i+"_hash","#view=publisher");
+					ctrack.chunk("crumb"+i+"_view","publisher");
+				}
+				else
+				{
+					ctrack.chunk("crumb"+i+"_hash","#view=main");
+					ctrack.chunk("crumb"+i+"_view","main");
+				}
 			}
 		}
 		ctrack.chunk("crumbs","{crumbs"+ctrack.crumbs.length+"}");
 	}
 
-
-// temporary country force hack
-	if( ctrack.q.country )
-	{
-		args.country=ctrack.q.country.toLowerCase();
-		args.chunks["country_name"]=iati_codes.country[args.country.toUpperCase()];
-		args.chunks["country_flag"]="{art}flag/"+args.country+".png";
-		args.chunks["background_image"]="{art}back/"+args.country+".jpg";
-	}
-
-	if( ctrack.q.tongue ) // choose a new tongue
-	{
-		args.tongue=ctrack.q.tongue;
-	}
-	
 	ctrack.chunks={};
 	if( args.tongue!="non" ) // use non as a debugging mode
 	{
@@ -121,7 +218,10 @@ ctrack.setup=function(args)
 			ctrack.chunks[n]=s;
 		}
 		return ctrack.chunks[n];
-	}
+	};
+	ctrack.chunk_clear=function(n){
+			ctrack.chunks[n]=undefined;
+	};
 // set global defaults
 	ctrack.chunk("art",args.art);
 	ctrack.chunk("flava",args.art+args.flava+"/");
@@ -141,9 +241,10 @@ ctrack.setup=function(args)
 // build ? strings for url changes
 
 	var aa={}
-	if(args.flava!="original") { aa["flava"]=args.flava; }
-	if(args.tongue!="eng") { aa["tongue"]=args.tongue; }
-	if(ctrack.q.country) { aa["country"]=ctrack.q.country; }
+	if(args.flava!="original") { aa["flava"]    =args.flava;         }
+	if(args.tongue!="eng")     { aa["tongue"]   =args.tongue;        }
+	if(ctrack.q.publisher)     { aa["publisher"]=ctrack.q.publisher; }
+	if(ctrack.q.country)       { aa["country"]  =ctrack.q.country;   }
 
 	var bb=[]; for(var n in aa) { bb.push(n+"="+aa[n]); }
 	ctrack.chunk("mark","?"+bb.join("&"));
@@ -166,7 +267,7 @@ ctrack.setup=function(args)
 //console.log(bb);
 			if( ( "string" == typeof bb[0] ) && ( "string" == typeof bb[1] ) )
 			{
-				v[ bb[0] ] = bb[1] ;
+				v[ bb[0] ] = decodeURIComponent(bb[1]) ;
 			}
 		});
 		return v;
@@ -188,7 +289,14 @@ ctrack.setup=function(args)
 		}
 	}
 
-	ctrack.hash={"view":"main"};
+	if(args.publisher)
+	{
+		ctrack.hash={"view":"publisher"};
+	}
+	else
+	{
+		ctrack.hash={"view":"main"};
+	}
 	ctrack.display_wait=0;
 	ctrack.display=function()
 	{
@@ -219,7 +327,7 @@ ctrack.setup=function(args)
 		var a=[];
 		for(var n in ctrack.hash)
 		{
-			a.push(n+"="+ctrack.hash[n]);
+			a.push(n+"="+encodeURIComponent(ctrack.hash[n]));
 		}
 		document.location.hash=a.join("&");
 	}
@@ -273,6 +381,7 @@ ctrack.setup=function(args)
 				{
 					v.fixup();
 				}
+				$("select.chosen").chosen({allow_single_deselect:true});
 			}
 		}
 	};

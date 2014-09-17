@@ -1,6 +1,9 @@
 #welcome_text
 Welcome to d-portal.org
 
+#publishers_welcome_text
+Welcome to d-portal.org : Publisher Edition
+
 #alert1_text
 d-portal.org is still in very early development, scheduled for Alpha release mid-April. Thank you for your patience! Please provide any feedback
 
@@ -12,6 +15,9 @@ Top
 
 #tagline_text
 Helping you understand development data.
+
+#publishers_tagline_text
+Publisher Edition
 
 #install_button_text
 Install
@@ -57,6 +63,9 @@ About
 
 #read_more_text
 Read more about d-portal
+
+#publisher_portal_text
+Publisher Edition
 
 #links_title_text
 Relevant links
@@ -125,7 +134,7 @@ In order to answer these questions from a country perspective it is insufficient
 is an open source platform.
 
 #about_paragraph7_text
-While it currently provides a generic deployment for any country it has been developed with the specific intention of being customised in-country to meet local needs. For further information on how you could create a customised version for a specific country, see <a href="#install">How to Install</a>.
+While it currently provides a generic deployment for any country it has been developed with the specific intention of being customised in-country to meet local needs. For further information on how you could create a customised version for a specific country, see <a href="#install" class="how">How to Install</a>.
 
 #about_paragraph8_text
 Funding
@@ -217,6 +226,15 @@ The final product will be available as a set of HTML, Javascript, and CSS files.
 #install_paragraph4_text
 Since HTML, CSS, Javascript are the technologies of the web, and are widely used and understood, we believe this is a good option for easy adoption by others, for easy deployment, and for easy re-configuration and customisation.
 
+#install_title2_text
+How to create a d-portal widget
+
+#install_paragraph5_text
+By using iframes, the d-portal Generator allows you to embed sections of d-portal in any html-enabled publishing platform; ie. Wordpress blog post, Tumblr post, a website etc.
+
+#install_paragraph6_text
+Visit <a href="http://d-portal.org/ctrack.html#view=generator" class="country_portal">http://d-portal.org/ctrack.html#view=generator</a> to create a d-portal widget.
+
 #github_tip_text
 Visit d-portal.org on Github
 
@@ -225,6 +243,9 @@ Fork us on
 
 #github_info2_text
 d-portal.org is currently being developed and designed so things are constantly changing. Send us your suggestions, bug reports and issues or contact <a href="mailto:queries@d-portal.org" target="_blank" class="git small">queries@d-portal.org</a>
+
+#github_info3_text
+If you would like to keep up to date with news on d-portal please subscribe to the <a href="https://groups.google.com/forum/?hl=en-GB#!members/d-portal-list" class="git small">Google group</a>.
 
 #footer_pick_text
 Pick another country
@@ -279,3 +300,45 @@ Dash is not country specific so you will be able to view all of the publisher st
 
 #dash_paragraph4_text
 Dash is currently accessible at <a href="http://d-portal.org/ctrack.html?#view=dash" class="dash_link">http://d-portal.org/ctrack.html?#view=dash</a>. Dash is a new feature and is still being developed.
+
+#publisher_title_text
+Explore a Publisher
+
+#publisher_paragraph1_text
+Pick a publisher below to explore their data.
+
+#sources_title_text
+Attribution and link to data sources
+
+#sources_header1_text
+Data
+
+#sources_header2_text
+Source Name
+
+#sources_header3_text
+Source URL
+
+#sources_data1_text
+Currency
+
+#sources_data2_text
+Country Flags
+
+#sources_data3_text
+Country Backgrounds
+
+#sources_data4_text
+Country Names
+
+#sources_data5_text
+2 Letter Country Codes
+
+#sources_data6_text
+Wikipedia Public Domain only images
+
+#sources_data7_text
+Public Google Spreadsheet
+
+#sources_data8_text
+Pixabay Public Domain only images

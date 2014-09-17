@@ -6,7 +6,7 @@
 <style>{css}</style>
 {beige}
 {main_head}
-{main_countrymin}
+{main_min}
 {about_data_links}
 {list_publishers_head}
 <div class="title_wrap">
@@ -22,9 +22,7 @@
 			{list_publishers_datas}
 		</table>
 	</div>
-	<div class="center_wrap">
-		<a href="#view=main" class="button">{back_text}</a>
-	</div>
+	{back_portal}
 </div>
 {list_publishers_data_description}
 {main_datainvestigators}
@@ -40,7 +38,7 @@
 </div>
 
 #list_publishers_data
-<tr>
+<tr onclick="return ctrack.url('#view=list_activities&reporting_ref={reporting_ref}');">
 	<td class="num">{num}.</td>
 	<td class="title">
 		<a href="#view=list_activities&reporting_ref={reporting_ref}" title="{list_publishers_text}">
@@ -60,7 +58,7 @@
 	</div><div class="head_title_wrap">
 			<div class="list_head_title">
 				<span class="list_stats_title">{stats_publisher_text}</span>
-				<span class="list_stats_num">{numof_publishers}</span>
+				<span class="list_stats_num">{list_publishers_count}</span>
 			</div>
 		</div>
 </div>

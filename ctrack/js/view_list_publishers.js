@@ -20,6 +20,7 @@ var commafy=function(s) { return (""+s).replace(/(^|[^\w.])(\d{4,})/g, function(
 // the chunk names this view will fill with new data
 view_list_publishers.chunks=[
 	"list_publishers_datas",
+	"list_publishers_count",
 ];
 
 //
@@ -39,22 +40,23 @@ view_list_publishers.view=function()
 view_list_publishers.ajax=function(args)
 {
 	args=args || {};
+	args.zerodata=args.zerodata||"{alert_no_data1}";
 
 	var dat={
-			"from":"act,country",
+			"from":"act",
 			"limit":args.limit || -1,
 			"select":"count,reporting_ref,reporting",
 			"groupby":"reporting_ref",
 			"orderby":"1-",
-			"country_code":(args.country || ctrack.args.country)
+			"country_code":(args.country || ctrack.args.country_select),
+			"reporting_ref":(args.publisher || ctrack.args.publisher_select),
 		};
-	if(args.q)
-	{
-		for(var n in args.q) // override with special qs
-		{
-			dat[n]=args.q[n];
-		}
-	}
+	for(var n in ctrack.q) { dat[n]=ctrack.q[n]; }
+	for(var n in ctrack.hash) { dat[n]=ctrack.hash[n]; }
+	for(var n in args.q) { dat[n]=args.q[n]; }
+	if(dat.sector_code||dat.sector_group) { dat.from+=",sector"; }
+	if(dat.country_code) { dat.from+=",country"; }
+	if(dat.location_latitude && dat.location_longitude) { dat.from+=",location"; }
 	if(args.output=="count") // just count please
 	{
 		dat.select="count";
@@ -72,6 +74,13 @@ view_list_publishers.ajax=function(args)
 		else
 		{
 			var s=[];
+			ctrack.args.chunks["table_header_amount"]=undefined;
+			if((data.rows.length==0)&&(args.zerodata))
+			{
+				s.push( plate.replace(args.zerodata,{}) );
+				ctrack.args.chunks["table_header_amount"]="";
+			}
+			ctrack.chunk("list_publishers_count",data.rows.length);
 			for(var i=0;i<data.rows.length;i++)
 			{
 				var v=data.rows[i];
@@ -79,7 +88,7 @@ view_list_publishers.ajax=function(args)
 				d.num=i+1;
 
 				d.reporting_ref=v.reporting_ref || "N/A";
-				d.reporting=v.reporting || "N/A";
+				d.reporting=iati_codes.publisher_names[v.reporting_ref] || v.reporting || v.reporting_ref || "N/A";
 				d.count=commafy(""+Math.floor(v.count||0));
 
 				s.push( plate.replace(args.plate || "{list_publishers_data}",d) );

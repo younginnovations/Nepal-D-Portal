@@ -28,9 +28,10 @@ view_donor_budgets.view=function()
 	ctrack.change_hash();
 	
 	var year=ctrack.hash.year || 2012;
-	var funder=ctrack.hash.funder || "gb";
+	var funder=ctrack.hash.funder;
 	
 	var args={};
+	args.zerodata="{alert_no_data1}";
 	
 	args.plate="{donor_budgets_data}";
 	args.chunk="donor_budgets_datas";
@@ -40,16 +41,14 @@ view_donor_budgets.view=function()
 		"funder_ref":funder,
 	};
 	args.q["budget_day_end_gteq"]=year+"-01-01";
-	args.q["budget_day_end_lt"]=(parseInt(year)+1)+"-01-01";
-				
-	args.callback=function(data){
+	args.q["budget_day_end_lt"]=(parseInt(year)+1)+"-01-01";				
 							
-		ctrack.chunk("alerts","");
-		if( iati_codes.crs_no_iati[funder] )
-		{
-			ctrack.chunk("alerts","{alert_no_iati}");
-		}
-
+	ctrack.chunk("alerts","");
+	if( iati_codes.crs_no_iati[funder] )
+	{
+		args.zerodata="{alert_no_iati}";
+	}
+	args.callback=function(data){
 		ctrack.chunk("donor",iati_codes.funder_names[funder] || iati_codes.country[funder] || funder );
 		ctrack.chunk("year",year);
 	};

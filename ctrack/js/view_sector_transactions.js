@@ -35,14 +35,15 @@ view_sector_transactions.view=function()
 	var sector=ctrack.hash.sector_group || "111";
 	
 	var args={};
+	args.zerodata="{alert_no_data3}";
 	
 	args.plate="{sector_transactions_data}";
 	args.chunk="sector_transactions_datas";
 	
 	args.q={
 		"year":year,
-		"sector_group":sector,
-		"from":"act,country,sector,trans",
+//		"sector_group":sector,
+//		"from":"act,country,sector,trans",
 	};
 	args.q["trans_day_gteq"]=year+"-01-01";
 	args.q["trans_day_lt"]=(parseInt(year)+1)+"-01-01";

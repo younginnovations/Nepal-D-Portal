@@ -29,13 +29,14 @@ view_sector_activities.view=function()
 	var sector=ctrack.hash.sector_group || "111";
 	
 	var args={};
+	args.zerodata="{alert_no_data3}";
 	
 	args.plate="{sector_activities_data}";
 	args.chunk="sector_activities_datas";
 	
 	args.q={
-		"sector_group":sector,
-		"from":"act,country,sector",
+//		"sector_group":sector,
+//		"from":"act,country,sector",
 		"groupby":"aid",
 	};
 	

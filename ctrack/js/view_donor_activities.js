@@ -24,9 +24,10 @@ view_donor_activities.view=function()
 	ctrack.setcrumb(2);
 	ctrack.change_hash();
 	
-	var funder=ctrack.hash.funder || "gb";
+	var funder=ctrack.hash.funder;
 	
 	var args={};
+	args.zerodata="{alert_no_data1}";
 	
 	args.plate="{donor_activities_data}";
 	args.chunk="donor_activities_datas";
@@ -36,14 +37,13 @@ view_donor_activities.view=function()
 		"groupby":"aid",
 	};
 	
+	ctrack.chunk("alerts","");
+	if( iati_codes.crs_no_iati[funder] )
+	{
+		args.zerodata="{alert_no_iati}";
+	}
+
 	args.callback=function(data){
-		
-		ctrack.chunk("alerts","");
-		if( iati_codes.crs_no_iati[funder] )
-		{
-			ctrack.chunk("alerts","{alert_no_iati}");
-		}
-		
 		ctrack.chunk("donor",iati_codes.funder_names[funder] || iati_codes.publisher_names[funder] || iati_codes.country[funder] || funder );
 		
 	};

@@ -76,8 +76,8 @@ view_dash.ajax2=function(args)
 		};
 	fetch.ajax(dat,args.callback || function(data)
 	{
-		console.log("view_dash.ajax");
-		console.log(data);
+//		console.log("view_dash.ajax");
+//		console.log(data);
 			
 		var s=[];
 		var total=0;
@@ -88,7 +88,7 @@ view_dash.ajax2=function(args)
 			d.num=i+1;
 			d.count=commafy(v.count);
 			d.reporting_ref=v.reporting_ref|| "N/A";
-			d.reporting=iati_codes.publisher_names[d.reporting_ref] || iati_codes.country[d.reporting_ref] || v.reporting;
+			d.reporting=iati_codes.publisher_names[v.reporting_ref] || v.reporting || v.reporting_ref || "N/A";
 
 			total+=d.count;
 			s.push( plate.replace(args.plate || "{dash_list_reporting_data}",d) );
@@ -116,8 +116,8 @@ view_dash.ajax1=function(args)
 		};
 	fetch.ajax(dat,args.callback || function(data)
 	{
-		console.log("view_dash.ajax");
-		console.log(data);
+//		console.log("view_dash.ajax");
+//		console.log(data);
 		
 		if(data.rows.length==1)
 		{
@@ -148,8 +148,8 @@ view_dash.ajax3=function(args)
 		};
 	fetch.ajax(dat,args.callback || function(data)
 	{
-		console.log("view_dash.ajax");
-		console.log(data);
+//		console.log("view_dash.ajax");
+//		console.log(data);
 		
 		var s=[];
 		var total=0;

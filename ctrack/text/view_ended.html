@@ -6,7 +6,7 @@
 <style>{css}</style>
 {beige}
 {main_head}
-{main_countrymin}
+{main_min}
 {about_data_links}
 {ended_head}
 <div class="title_wrap">
@@ -22,9 +22,7 @@
 			{ended_projects_datas}
 		</table>
 	</div>
-	<div class="center_wrap">
-		<a href="#view=main" class="button">{back_text}</a>
-	</div>
+	{back_portal}
 </div>
 {ended_data_description}
 {main_datainvestigators}
@@ -40,7 +38,7 @@
 </div>
 
 #ended_projects_data
-<tr>
+<tr onclick="return ctrack.url('#view=act&aid={aid}');">
 	<td class="num">{num}.</td>
 	<td class="title">
 		<a href="#view=act&aid={aid}" title="{project_title_tip_text}">
@@ -59,7 +57,7 @@
 			<div class="list_peak_space"></div>
 			<div class="donors_peak view"></div>
 	</div><div class="head_title_wrap">
-			<div class="donors_head_title view" style="">
+			<div class="donors_head_title view">
 				<span class="stats_title view">{stats_ended_text}</span>
 				<span class="stats_num view">{ended_projects}</span>
 			</div>

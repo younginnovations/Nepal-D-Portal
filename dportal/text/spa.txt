@@ -1,6 +1,9 @@
 #welcome_text
 Bienvenido a d-portal.org
 
+#publishers_welcome_text
+Bienvenido a d-portal.org : Editorial edición
+
 #alert1_text
 d-portal.org está todavía en desarrollo muy temprano, programado para su estreno a mediados de abril Alfa. Gracias por su paciente usted! Lamentablemente Cualquier comentario
 
@@ -12,6 +15,9 @@ Superior
 
 #tagline_text
 Ayudar a comprender los datos de desarrollo.
+
+#publishers_tagline_text
+Editorial edición
 
 #install_button_text
 Editor
@@ -57,6 +63,9 @@ Acerca
 
 #read_more_text 
 Lea más acerca de d-portal
+
+#publisher_portal_text 
+Editorial Edición
 
 #links_title_text 
 Enlaces de interés
@@ -125,7 +134,7 @@ Con el fin de responder a estas preguntas desde una perspectiva nacional es insu
 es una plataforma de código abierto.
 
 #about_paragraph7_text
-A pesar de que actualmente proporciona una implementación genérica para cualquier país que ha sido desarrollado con la intención específica de ser modificado para requisitos particulares en el país para satisfacer las necesidades locales . Para más información sobre cómo se puede crear una versión personalizada para un país específico , vea nuestra página Instalar <i> (que pronto estará disponible ) </i> .
+A pesar de que actualmente proporciona una implementación genérica para cualquier país que se ha desarrollado con la intención específica de ser modificado para requisitos particulares en el país para satisfacer las necesidades locales. Para más información sobre cómo se puede crear una versión personalizada para un país específico, consulte <a href="#install" class="how"> Cómo instalar </a>.
 
 #about_paragraph8_text
 Financiamiento
@@ -217,6 +226,15 @@ El producto final estará disponible como un conjunto de HTML, Javascript, y CSS
 #install_paragraph4_text 
 Desde HTML, CSS, Javascript son las tecnologías de la web, y es ampliamente utilizado y comprendido, creemos que esta es una buena opción para una fácil adopción por parte de los demás, para una fácil implementación, y para facilitar re-configuración y personalización .
 
+#install_title2_text 
+¿Cómo crear un widget-d portal 
+
+#install_paragraph5_text 
+Mediante el uso de iframes, el Generador de d-portal le permite incluir secciones de d-portal en cualquier plataforma de publicación HTML habilitado; es decir. Mensaje Wordpress blog, mensaje Tumblr, un sitio web, etc 
+
+#install_paragraph6_text 
+Visita <a href="http://d-portal.org/ctrack.html#view=generator" class="country_portal">http://d-portal.org/ctrack.html#view=generator</a> para crear un widget-d portal.
+
 #github_tip_text
 Visite d-portal.org en Github
 
@@ -225,6 +243,9 @@ Tenedor nosotros
 
 #github_info2_text
 d-portal.org está siendo desarrollado y diseñado para que las cosas están cambiando constantemente en la actualidad. Envíanos tus sugerencias, informes de errores y problemas o contacto <a href="mailto:queries@d-portal.org" target="_blank" class="git small"> queries@d-portal.org </a>
+
+#github_info3_text
+Si quieres estar al día de las noticias sobre d-portal por favor suscríbase a la <a href="https://groups.google.com/forum/?hl=en-GB#!members/d-portal-list" class="git small">Google grupo</a>.
 
 #footer_pick_text 
 Elige otro país 
@@ -273,3 +294,45 @@ Dash no es específico de cada país por lo que será capaz de ver todas las est
 
 #dash_paragraph4_text 
 Dash es actualmente accesible en <a href="http://d-portal.org/ctrack.html?#view=dash" class="dash_link">http://d-portal.org/ctrack.html?#view=dash</a>. Dash es una característica nueva y todavía se está desarrollando.
+
+#publisher_title_text
+Explora un publicador
+
+#publisher_paragraph1_text
+Elige un editor de abajo para explorar sus datos.
+
+#sources_title_text 
+Reconocimiento y enlace a las fuentes de datos 
+
+#sources_header1_text 
+Datos 
+
+#sources_header2_text 
+Nombre de la fuente 
+
+#sources_header3_text 
+URL Fuente 
+
+#sources_data1_text 
+Moneda 
+
+#sources_data2_text 
+Banderas de países 
+
+#sources_data3_text 
+Fondos País 
+
+#sources_data4_text 
+Nombres de países 
+
+#sources_data5_text 
+2 Códigos Carta País 
+
+#sources_data6_text 
+Sólo Wikipedia dominio público imágenes 
+
+#sources_data7_text 
+Pública de hoja de cálculo Google
+
+#sources_data8_text 
+Sólo Pixabay dominio público imágenes

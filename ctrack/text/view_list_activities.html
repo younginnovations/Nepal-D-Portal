@@ -6,7 +6,7 @@
 <style>{css}</style>
 {beige}
 {main_head}
-{main_countrymin}
+{main_min}
 {about_data_links}
 {list_activities_head}
 <div class="title_wrap">
@@ -22,9 +22,7 @@
 			{list_activities_datas}
 		</table>
 	</div>
-	<div class="center_wrap">
-		<a href="#view=main" class="button">{back_text}</a>
-	</div>
+	{back_portal}
 </div>
 {list_activities_data_description}
 {main_datainvestigators}
@@ -33,14 +31,14 @@
 #list_activities_data_description
 <div class="description_wrap">
 	<div class="description">
-		<span class="title">{list_activities_data_description_title_text}</span>
-		<p>{list_activities_data_description_text}</p>
+		<span class="title">{donor_activities_data_description_title_text}</span>
+		<p>{donor_activities_data_description_text}</p>
 		<a href="#view=data_quality" class="read">{read_more_text}</a>
 	</div>
 </div>
 
 #list_activities_data
-<tr>
+<tr onclick="return ctrack.url('#view=act&aid={aid}');">
 	<td class="num">{num}.</td>
 	<td class="title" title="{project_title_tip_text}">
 		<a href="#view=act&aid={aid}">
@@ -61,7 +59,7 @@
 	</div><div class="head_title_wrap">
 			<div class="list_head_title">
 				<span class="list_stats_title">{stats_total_text}</span>
-				<span class="list_stats_num">{total_projects}</span>
+				<span class="list_stats_num">{list_activities_count}</span>
 			</div>
 		</div>
 </div>

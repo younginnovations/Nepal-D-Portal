@@ -29,23 +29,25 @@ view_main.fixup=function()
 view_main.view=function(args)
 {
 
-	views.main.chunks.forEach(function(n){ctrack.chunk(n,"{spinner_in_table_row}");});
+	views.main.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
 
 	views.planned.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
 	views.active.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
 	views.ended.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
 	views.stats.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
-	views.donors_top.chunks.forEach(function(n){ctrack.chunk(n,"{spinner_in_table_row}");});
-	views.sectors_top.chunks.forEach(function(n){ctrack.chunk(n,"{spinner_in_table_row}");});
+	views.donors_top.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
+	views.sectors_top.chunks.forEach(function(n){ctrack.chunk(n,"{spinner}");});
 
 
 	ctrack.setcrumb(0);
 	ctrack.change_hash();
 
+/*
 	views.planned.ajax({output:"count"});
 	views.active.ajax({output:"count"});
 	views.ended.ajax({output:"count"});
 	views.missing.ajax({output:"count"});
+*/
 	views.stats.ajax();
 	
 	views.active.ajax({limit:5,plate:"{table_active_data}",chunk:"table_active_datas"});
