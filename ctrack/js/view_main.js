@@ -56,4 +56,5 @@ view_main.view=function(args)
 
 	ctrack.map.pins=undefined;
 	views.map.ajax_heat({limit:200});
+	views.donors_comparison.ajax();
 }

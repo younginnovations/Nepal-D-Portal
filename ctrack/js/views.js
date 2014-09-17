@@ -24,12 +24,14 @@ views.stats=require("./view_stats.js");
 views.map=require("./view_map.js");
 
 views.main=require("./view_main.js");
+views.donors_comparison=require("./view_donors_comparison.js");
 
 views.donors_top=require("./view_donors_top.js");
 views.donors=require("./view_donors.js");
 views.donor_transactions=require("./view_donor_transactions.js");
 views.donor_budgets=require("./view_donor_budgets.js");
 views.donor_activities=require("./view_donor_activities.js");
+views.donors_nepal=require("./view_donors_nepal.js");
 
 views.sectors_top=require("./view_sectors_top.js");
 views.sectors=require("./view_sectors.js");
