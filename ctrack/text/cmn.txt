@@ -2,7 +2,7 @@
 那些金钱从何而来？
 
 #table_declare_text
-*点击任何下面的单元格的探索
+*点击任何下面的单元格的探索，将鼠标悬停在任何单元格进行解释。单击列标题进行相应的分类。
 
 #money_title_icon_alt_text
 公众想知道那里的钱是！
@@ -12,6 +12,30 @@
 
 #alert_no_iati_tip_text
 此捐助不发布到IATI呢。
+
+#alert_nodata1_text 
+某些数据质量问题与该数据存在。 <a href="#view=data_quality">了解更多关于数据质量。</a> 
+
+#alert_nodata1_tip_text 
+一些数据质量问题 - 点击查看更多信息 
+
+#alert_nodata2_text 
+虽然这种捐助已经发表了一些数据来IATI，数据质量低意味着我们目前无法在这里显示出来。 <a href="#view=data_quality">点击这里了解数据质量的详细信息。</a>请直接联系发布者，如果你想讨论自己的数据和数据质量。 
+
+#alert_nodata2_tip_text 
+数据质量问题 - 点击查看更多信息 
+
+#alert_nodata3_text 
+在此期间没有资源流动据报道，这一部门。 
+
+#alert_nodata3_tip_text 
+在此期间没有资源流动据报道，该部门 
+
+#alert_nodata4_text 
+虽然有些数据已经公布，数据的低质量意味着我们目前无法在这里显示出来。 <a href="#view=data_quality">点击这里了解数据质量的详细信息。</a> 
+
+#alert_nodata4_tip_text 
+数据质量问题 - 点击查看更多信息
 
 #active_icon_alt_text
 活跃的项目图标
@@ -43,11 +67,14 @@ d-portal.org还处于非常早期的开发中，预计Alpha版本四月中旬。
 #mainback_tip_text
 回到发展门户
 
+#mainback_publisher_tip_text
+回到发展门户: 发行版
+
 #back_text
-回到发展门户
+返回{portal_name}
 
 #crumbname_main_text
-{country_name}首页
+{portal_name}首页
 
 #crumbname_donors_text
 捐款人名单
@@ -88,9 +115,6 @@ d-portal.org还处于非常早期的开发中，预计Alpha版本四月中旬。
 #crumbname_list_publishers_text 
 出版社 
 
-#crumbname_list_activities_text 
-项目总
-
 #crumbname_missing_text 
 缺少项目
 
@@ -99,6 +123,21 @@ d-portal.org还处于非常早期的开发中，预计Alpha版本四月中旬。
 
 #crumbname_map_text 
 活动地图
+
+#crumbname_publisher_text
+出版商首页
+
+#crumbname_publisher_countries_text
+国家列表
+
+#crumbname_list_transactions_text 
+交易 
+
+#crumbname_list_budgets_text 
+预算 
+
+#crumbname_list_activities_text 
+活动
 
 #data_investigate_text
 数据调查员，我们需要你！如果你发现什么出格的地方，请联系开发团队。
@@ -140,7 +179,7 @@ IATI出版社
 那已经结束的项目总数
 
 #stats_total_tip_text
-的计算{country_name}项目总数
+的计算{portal_name}项目总数
 
 #stats_planned_tip_text
 正在计划在未来的项目总数
@@ -172,6 +211,12 @@ IATI出版社
 #list_donor_back_text
 返回到捐款人名单
 
+#list_sector_back_text
+返回列表行业
+
+#list_country_back_text 
+回到国家列表
+
 #view_donor_transactions_text
 在{year}总支出由{donor}
 
@@ -199,6 +244,9 @@ IATI出版社
 #amount_text
 总和
 
+#donor_activities_spend_text
+承担总额
+
 #donor_activities_percentage_tip_text
 花总承担的百分比
 
@@ -214,8 +262,14 @@ IATI花费（美元）
 #table_donor_title_budget_text
 IATI预算（美元）
 
+#table_donor_title_data_text
+CRS
+
 #table_donor_title_donor_text
 捐助者
+
+#table_donor_subtitle_donor_text
+名称
 
 #table_donor_tip_title_transaction_text
 IATI交易
@@ -223,29 +277,35 @@ IATI交易
 #table_donor_tip_title_budget_text
 IATI预算
 
-#table_donor_tip_title_crs_text
-数据从CRS 2012源
+#table_donor_tip_title_data_text
+OECD Creditor Reporting System
 
 #table_donor_tip_title_donor_text
-资金来源 
+资金来源
+
+#table_donor_tip_subtitle_data_text
+点击该列排序
+
+#table_donor_tip_subtitle_donor_text
+点击该列排序
 
 #table_donor_tip_title_t2012_text
-捐赠者的交易以美元总和2012
+点击该列排序
 
 #table_donor_tip_title_t2013_text
-捐赠者的交易以美元总和2013
+点击该列排序
 
 #table_donor_tip_title_t2014_text
-施主交易的美元总2014年
+点击该列排序
 
 #table_donor_tip_title_b2014_text
-捐助者预算在美元总2014年
+点击该列排序
 
 #table_donor_tip_title_b2015_text
-捐助者预算在美元总为2015年
+点击该列排序
 
-#table_donor_tip_crs_text
-这种捐助的交易按非IATI （ CRS和其他）之和在2012年
+#table_donor_tip_data_text
+在2012年全年总支出为捐赠者
 
 #table_donor_tip_donor_text
 点击探索源活动
@@ -254,25 +314,28 @@ IATI预算
 点击探索源活动
 
 #table_donor_tip_t2012_text
-捐赠者的交易以美元总和2012
+点击探索源活动2012
 
 #table_donor_tip_t2013_text
-捐赠者的交易以美元总和2013
+点击探索源活动2013
 
 #table_donor_tip_t2014_text
-施主交易的美元总2014年
+点击探索源活动2014
 
 #table_donor_tip_b2014_text
-捐助者预算在美元总2014年
+点击探索源活动2014
 
 #table_donor_tip_b2015_text
-捐助者预算在美元总为2015年
+点击探索源活动2015
 
 #table_sector_title_transaction_text
 IATI交易（美元）
 
 #table_sector_title_budget_text
 IATI预算（美元）
+
+#table_sector_title_data_text
+CRS
 
 #table_sector_title_sector_text
 行业
@@ -283,47 +346,50 @@ IATI交易
 #table_sector_tip_title_budget_text
 IATI预算
 
-#table_sector_tip_title_crs_text
-数据从非IATI （CRS和其他）来源2012
+#table_sector_tip_title_data_text
+OECD Creditor Reporting System
 
-#table_sector_tip_title_donor_text
-点击探讨
+#table_sector_tip_title_sector_text
+经合组织CRS目的代码分组
+
+#table_sector_tip_subtitle_data_text
+点击该列排序
+
+#table_sector_tip_subtitle_sector_text
+点击该列排序
 
 #table_sector_tip_title_t2012_text
-部门交易的美元总2012年
+点击该列排序
 
 #table_sector_tip_title_t2013_text
-部门交易的美元金额为2013
+点击该列排序
 
 #table_sector_tip_title_t2014_text
-部门交易的美元总2014年
+点击该列排序
 
 #table_sector_tip_title_b2014_text
-总和的部门预算，以美元于2014年
+点击该列排序
 
 #table_sector_tip_title_b2015_text
-总和的部门预算，以美元为2015年
+点击该列排序
 
-#table_sector_tip_crs_text
-这ssctor交易按非IATI （ CRS和其他）之和在2012年
-
-#table_sector_tip_donor_text
-点击探讨
+#table_sector_tip_data_text
+报告的所有组织OECD CRS记者，每个部门每年的总支出
 
 #table_sector_tip_t2012_text
-部门交易的美元总2012年
+点击探索源活动2012
 
 #table_sector_tip_t2013_text
-部门交易的美元金额为2013
+点击探索源活动2013
 
 #table_sector_tip_t2014_text
-部门交易的美元总2014年
+点击探索源活动2014
 
 #table_sector_tip_b2014_text
-总和的部门预算，以美元于2014年
+点击探索源活动2014
 
 #table_sector_tip_b2015_text
-总和的部门预算，以美元为2015年
+点击探索源活动2015
 
 #table_active_date_tip_text
 结束日期
@@ -395,7 +461,10 @@ Español
 旗
 
 #map_info_text
-这是已获提供精确的位置为{country_name}所有活动的热图。
+这是已获提供精确的位置为{portal_name}所有活动的热图。
+
+#publisher_map_info_text
+这是已获提供精确的位置为{portal_name}所有活动的热图。
 
 #map_view_text 
 查看全部
@@ -434,7 +503,7 @@ Español
 CRS
 
 #donors_data_info1_text
-该OECD的所有成员及其他一些国家和机构的<span class="bold italic"> OECD贷方报告制度</span>关于官方发展援助和其他官方流动年度报告。此数据追溯发表：在每年的十二月CRS与上一年度的数据更新（原来是12间至23个月过时了） 。而向后看的数据是不是发展规划特别有用 - 它是参考一个非常有用的和相对准确的点。这是包括占位国家和机构目前不向IATI特别有用。在本专栏中提供的数据是每年的总支出（花）, 为国家。该值在当前美元。
+该OECD的所有成员及其他一些国家和机构的<span class="bold italic"> OECD贷方报告制度</span>关于官方发展援助和其他官方流动年度报告。此数据追溯发表：在每年的十二月CRS与上一年度的数据更新（原来是12间至23个月过时了） 。而向后看的数据是不是发展规划特别有用 - 它是参考一个非常有用的和相对准确的点。这是包括占位国家和机构目前不向IATI特别有用。在本专栏中提供的数据是每年的总支出（花）, 为国家。该值在当前美元。“ - ”表示不存在数据的CRS为供体。
 
 #donors_data_title2_text
 捐助者
@@ -464,7 +533,7 @@ IATI 预算
 数据是如何计算出来的？
 
 #donor_transactions_data_description_text
-支出是通过增加支出和支出计算。此表显示了您为{country_name}报告{donor}和排序活动在顶部最高消费的所有活动。
+支出是通过增加支出和支出计算。此表显示了您为{portal_name}报告{donor}和排序活动在顶部最高消费的所有活动。
 
 #donor_budgets_data_description_title_text
 数据是如何计算出来的？
@@ -512,7 +581,7 @@ IATI 预算
 数据是如何计算出来的？
 
 #sector_transactions_data_description_text
-支出是通过增加支出和支出计算。此表显示了您为{country_name}报告{sector}和排序活动在顶部最高消费的所有活动。
+支出是通过增加支出和支出计算。此表显示了您为{portal_name}报告{sector}和排序活动在顶部最高消费的所有活动。
 
 #sector_budgets_data_description_title_text
 数据是如何计算出来的？
@@ -556,22 +625,28 @@ IATI 预算
 在页上的数据的剩余部分来源于IATI。通常，这将被每天更新午夜北京时间。
 
 #view_active_text
-所有活动项目{country_name}
+所有活动项目{portal_name}
 
 #view_ended_text
-为{country_name}所有项目结束
+为{portal_name}所有项目结束
 
 #view_planned_text
-为{country_name}全部规划项目
+为{portal_name}全部规划项目
 
 #view_list_publishers_text
-所有出版商{country_name}
+所有出版商{portal_name}
 
 #view_list_activities_text
 活动列表
 
+#view_list_transactions_text 
+总支出 
+
+#view_list_budgets_text 
+总预算
+
 #view_missing_text 
-与无效日期范围的项目为{country_name}
+与无效日期范围的项目为{portal_name}
 
 #active_data_description_title_text
 数据是如何计算出来的？
@@ -613,7 +688,7 @@ IATI 预算
 数据是如何计算出来的？ 
 
 #map_data_description_text 
-只有提供活动地点显示在地图上。活动也仅限{country_name}E的边界内。
+只有提供活动地点显示在地图上。活动也仅限{portal_name}E的边界内。
 
 #data_title_text
 为什么数据质量问题
@@ -635,3 +710,87 @@ d-portal展示了一些主要的发展伙伴的最佳实践。许多IATI出版�
 
 #data_paragraph6_text
 我们希望我们的介绍的数据 - 与差距 - 提供数据的景观的有用的概述。哪里有数据的关键漏洞，我们会鼓励你，与你的开发伙伴，要求他们提高数据的质量，他们目前做用。
+
+#download_csv_text
+下载表格为CSV
+
+#table_publisher_country_title_text
+国家
+
+#table_publisher_country_tip_title_text
+受援国
+
+#table_publisher_explore_tip_text
+点击探索活动
+
+#table_publisher_tip_t2012_text
+点击探索源活动2012
+
+#table_publisher_tip_t2013_text
+点击探索源活动2013
+
+#table_publisher_tip_t2014_text
+点击探索源活动2014
+
+#table_publisher_tip_b2014_text
+点击探索源活动2014
+
+#table_publisher_tip_b2015_text
+点击探索源活动2015
+
+#title_publisher_countries_text 
+这笔钱去{countries_count}国家。 
+
+#title_publisher_sectors_text 
+这笔钱去{sectors_count}行业。
+
+#publisher_sectors_data_description_title_text
+数据是如何计算出来的？
+
+#publisher_sectors_data_description_text
+该表显示了外部发展资源流动正在引导扇区：过去，现在和将来在大多数情况下，CRS值会比IATI高很多，因为有很多大捐助者谁还是不报的IATI和许多出版商IATI其数据质量差的列显示以下数据：
+
+#publisher_sectors_data_title1_text
+行业
+
+#publisher_sectors_data_info1_text
+这里列出的部门是经合组织CRS目的代码分组。有顷目前197的CRS目的代码。 DI已制定针对论文行业所有的目的码。这份名单是由2012年支付额的价值排序（大图无论是通过CRS报告对黄金IATI） 
+
+#publisher_sectors_data_title2_text
+IATI 费
+
+#publisher_sectors_data_info2_text
+三列包含的总支出和支出报告给IATI本年度及前两年。第一列永远是同年作为最近CRS数据，使两个系统之间的比较。点击任意单元格将带你到那些弥补值的单元格（为了他们的价值贡献上市）项目。 “ - ”包含单元格表示，该组织尚未发布到IATI 。含“ 0 ”细胞是质量差的指示IATI报告。
+
+#publisher_sectors_data_title3_text
+IATI 预算
+
+#publisher_sectors_data_info3_text
+总活性级预算，这和明年上报IATI 。点击任意单元格将带你到那些弥补值的单元格（为了他们的价值贡献上市）项目。 “ - ”包含单元格表示，该组织尚未发布到IATI 。含“ 0 ”细胞是质量差的指示IATI报告。
+
+#publisher_countries_data_description_title_text
+数据是如何计算出来的？
+
+#publisher_countries_data_description_text
+该表显示了外部发展资源流动正在引导扇区：过去，现在和将来在大多数情况下，CRS值会比IATI高很多，因为有很多大捐助者谁还是不报的IATI和许多出版商IATI其数据质量差的列显示以下数据：
+
+#publisher_countries_data_title1_text
+行业
+
+#publisher_countries_data_info1_text
+这里列出的部门是经合组织CRS目的代码分组。有顷目前197的CRS目的代码。 DI已制定针对论文行业所有的目的码。这份名单是由2012年支付额的价值排序（大图无论是通过CRS报告对黄金IATI） 
+
+#publisher_countries_data_title2_text
+IATI 费
+
+#publisher_countries_data_info2_text
+三列包含的总支出和支出报告给IATI本年度及前两年。第一列永远是同年作为最近CRS数据，使两个系统之间的比较。点击任意单元格将带你到那些弥补值的单元格（为了他们的价值贡献上市）项目。 “ - ”包含单元格表示，该组织尚未发布到IATI 。含“ 0 ”细胞是质量差的指示IATI报告。
+
+#publisher_countries_data_title3_text
+IATI 预算
+
+#publisher_countries_data_info3_text
+总活性级预算，这和明年上报IATI 。点击任意单元格将带你到那些弥补值的单元格（为了他们的价值贡献上市）项目。 “ - ”包含单元格表示，该组织尚未发布到IATI 。含“ 0 ”细胞是质量差的指示IATI报告。
+
+#missing_data_text 
+这项活动是丢失或无法找到。

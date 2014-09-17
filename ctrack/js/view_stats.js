@@ -10,11 +10,15 @@ var plate=require("./plate.js")
 var iati=require("./iati.js")
 var fetch=require("./fetch.js")
 
+var views=require("./views.js")
 
 // the chunk names this view will fill with new data
 view_stats.chunks=[
 	"total_projects",
 	"missing_projects",
+	"active_projects",
+	"ended_projects",
+	"planned_projects",
 	"numof_publishers",
 	"percent_of_activities_with_location",
 ];
@@ -64,7 +68,8 @@ view_stats.ajax=function(args)
 	var dat={
 			"select":"stats",
 			"from":"act,country",
-			"country_code":(args.country || ctrack.args.country)
+			"country_code":(args.country || ctrack.args.country_select),
+			"reporting_ref":(args.publisher || ctrack.args.publisher_select),
 		};
 		
 	fetch.ajax(dat,args.callback || function(data)
@@ -74,7 +79,7 @@ view_stats.ajax=function(args)
 			
 		if(data.rows[0])
 		{
-			ctrack.chunk("total_projects",data.rows[0]["COUNT(*)"]);
+			ctrack.chunk("total_projects",data.rows[0]["COUNT(DISTINCT aid)"]);
 			ctrack.chunk("numof_publishers",data.rows[0]["COUNT(DISTINCT reporting_ref)"]);
 		}
 		
@@ -91,7 +96,8 @@ view_stats.ajax=function(args)
 			"country_percent":100, // *only* this country
 			"location_longitude_not_null":1, // must have a location
 			"location_latitude_not_null":1, // must have a location
-			"country_code":(args.country || ctrack.args.country)
+			"country_code":(args.country || ctrack.args.country_select),
+			"reporting_ref":(args.publisher || ctrack.args.publisher_select),
 		};
 	fetch.ajax(dat,args.callback || function(data)
 	{
@@ -106,5 +112,10 @@ view_stats.ajax=function(args)
 
 		ctrack.display(); // every fetch.ajax must call display once
 	});
+	
+	views.planned.ajax({output:"count"});
+	views.active.ajax({output:"count"});
+	views.ended.ajax({output:"count"});
+	views.missing.ajax({output:"count"});
 	
 }

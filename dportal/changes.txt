@@ -1,3 +1,35 @@
+Static site (2014-09-09 shi)
+==============================
+Fixed url for widget in About page
+
+
+Static site (2014-08-28 shi)
+==============================
+Edited About page to include new generator section
+Added translations
+Added Pixabay attribution
+Fixed Generator link
+
+
+Static site (2014-08-11 shi)
+==============================
+Added attribution and links to data sources in about page
+Added translations
+
+
+Static site (2014-07-29 shi)
+==============================
+Fixed CSS for index
+Added publishers portal index page
+Added translations for new page
+Added link to Google Group in about page
+
+
+Static site (2014-07-23 shi)
+==============================
+Added new column in Dash quality for datasets
+
+
 Static site (2014-06-25 shi)
 ==============================
 Added Dash to About page

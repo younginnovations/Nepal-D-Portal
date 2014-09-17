@@ -2,7 +2,7 @@
 ¿De dónde viene el dinero?
 
 #table_declare_text
-*Haga clic en cualquiera de las celdas de abajo para explorar
+*Haga clic en cualquiera de las celdas de abajo para explorar. Pase el ratón sobre cualquier célula de explicaciones. Haga clic en los títulos de las columnas para ordenar en consecuencia.
 
 #money_title_icon_alt_text
 El público quiere saber dónde está el dinero !
@@ -12,6 +12,30 @@ Esta Donantes no publica a IATI.
 
 #alert_no_iati_tip_text
 Esta Donantes no publica a IATI.
+
+#alert_nodata1_text 
+Existen algunos problemas de calidad de datos con estos datos. <a href="#view=data_quality"> Lea más acerca de la calidad de datos. </a> 
+
+#alert_nodata1_tip_text 
+Algunos problemas de calidad de datos - Haga clic para obtener más información 
+
+#alert_nodata2_text 
+Aunque este donante ha publicado algunos datos a la IATI, la baja calidad de los datos significa que actualmente no podemos mostrar aquí. <a href="#view=data_quality"> Haga clic aquí para obtener más información acerca de la calidad de datos. </a> Por favor, póngase en contacto con el editor directamente si le gustaría hablar de sus datos y la calidad de los datos. 
+
+#alert_nodata2_tip_text 
+Los problemas de calidad de datos - Haga clic para obtener más información 
+
+#alert_nodata3_text 
+No hay flujos de recursos se informó a este sector durante este período. 
+
+#alert_nodata3_tip_text 
+No hay flujos de recursos se informó a este sector durante este periodo 
+
+#alert_nodata4_text 
+Aunque algunos datos han sido publicados, la baja calidad de los datos significa que actualmente no podemos mostrar aquí. <a href="#view=data_quality"> Haga clic aquí para obtener más información acerca de la calidad de datos. </a> 
+
+#alert_nodata4_tip_text 
+Los problemas de calidad de datos - Haga clic para obtener más información
 
 #active_icon_alt_text
 Proyectos activos icono
@@ -43,11 +67,14 @@ aquí
 #mainback_tip_text
 Volver a la Portal de Desarrollo
 
+#mainback_publisher_tip_text
+Volver a la Portal de Desarrollo: Editorial edición
+
 #back_text
-Volver a la Portal de Desarrollo
+Volver a la {portal_name}
 
 #crumbname_main_text 
-{country_name} Casa 
+{portal_name} Casa 
 
 #crumbname_donors_text 
 Lista de Donantes 
@@ -88,9 +115,6 @@ Proyectos Planificados
 #crumbname_list_publishers_text 
 Editores 
 
-#crumbname_list_activities_text 
-Total de Proyectos
-
 #crumbname_missing_text 
 Proyectos Desaparecidos
 
@@ -99,6 +123,21 @@ Acerca de la calidad de datos
 
 #crumbname_map_text 
 Mapa de Actividad
+
+#crumbname_publisher_text
+Editorial Inicio
+
+#crumbname_publisher_countries_text
+Lista País
+
+#crumbname_list_transactions_text 
+Transacciones 
+
+#crumbname_list_budgets_text 
+presupuestos 
+
+#crumbname_list_activities_text 
+Actividades
 
 #data_investigate_text
 Investigadores de Datos, que necesitan! Si encuentra algo fuera de lugar, por favor, póngase en contacto con el equipo de desarrollo.
@@ -140,7 +179,7 @@ Número total de proyectos que aún están activos ahora
 Número total de proyectos que han terminado 
 
 #stats_total_tip_text 
-Número total de proyectos calculados para {country_name} 
+Número total de proyectos calculados para {portal_name} 
 
 #stats_planned_tip_text 
 Número total de proyectos que están siendo planificadas en el futuro 
@@ -172,6 +211,12 @@ Ver todo
 #list_donor_back_text
 Volver a la lista de los donantes
 
+#list_sector_back_text
+Volver a la lista de Sector
+
+#list_country_back_text 
+Volver a la lista de País
+
 #view_donor_transactions_text
 Gasto total para {donor} en {year}
 
@@ -199,6 +244,9 @@ Fecha de finalización
 #amount_text
 Cantidad
 
+#donor_activities_spend_text
+Compromisos totales
+
 #donor_activities_percentage_tip_text 
 Porcentaje del total de compromisos pasados
 
@@ -214,8 +262,14 @@ GASTAR IATI (USD)
 #table_donor_title_budget_text
 PRESUPUESTO IATI (USD)
 
+#table_donor_title_data_text
+CRS
+
 #table_donor_title_donor_text
-DONANTE IATI
+DONANTE
+
+#table_donor_subtitle_donor_text
+NOMBRE
 
 #table_donor_tip_title_transaction_text
 Transacciones IATI
@@ -223,56 +277,65 @@ Transacciones IATI
 #table_donor_tip_title_budget_text
 Presupuestos IATI
 
-#table_donor_tip_title_crs_text
-Los datos se obtienen de No IATI (CRS y Otros) 2012
+#table_donor_tip_title_data_text
+OECD Creditor Reporting System
 
 #table_donor_tip_title_donor_text
-Origen de los fondos 
+Origen de los fondos
+
+#table_donor_tip_subtitle_data_text
+Haga clic aquí para ordenar esta columna
+
+#table_donor_tip_subtitle_donor_text
+Haga clic aquí para ordenar esta columna
 
 #table_donor_tip_title_t2012_text
-Suma de las transacciones de los donantes en USD para el año 2012
+Haga clic aquí para ordenar esta columna
 
 #table_donor_tip_title_t2013_text
-Suma de las transacciones de los donantes en USD para el 2013
+Haga clic aquí para ordenar esta columna
 
 #table_donor_tip_title_t2014_text
-Suma de las transacciones de los donantes en USD para el 2014
+Haga clic aquí para ordenar esta columna
 
 #table_donor_tip_title_b2014_text
-Suma de los presupuestos de los donantes en USD para el 2014
+Haga clic aquí para ordenar esta columna
 
 #table_donor_tip_title_b2015_text
-Suma de los presupuestos de los donantes en USD para 2015
+Haga clic aquí para ordenar esta columna
 
-#table_donor_tip_crs_text
-Suma de las transacciones para este Donantes según No IATI (CRS y Otros) en 2012
+#table_donor_tip_data_text
+Gasto total anual reportada por todos los reporteros de la OECD CRS para el donante
 
 #table_donor_tip_donor_text
-Haga clic para explorar actividades Fuente
+Haga clic para explorar actividades
 
 #table_sector_tip_sector_text
-Haga clic para explorar actividades Fuente
+Haga clic para explorar actividades
 
 #table_donor_tip_t2012_text
-Suma de las transacciones de los donantes en USD para el año 2012
+Haga clic para explorar actividades para el 2012
 
 #table_donor_tip_t2013_text
-Suma de las transacciones de los donantes en USD para el 2013
+Haga clic para explorar actividades para el 2013
 
 #table_donor_tip_t2014_text
-Suma de las transacciones de los donantes en USD para el 2014
+Haga clic para explorar actividades para el 2014
 
 #table_donor_tip_b2014_text
-Suma de los presupuestos de los donantes en USD para el 2014
+Haga clic para explorar actividades para el 2014
 
 #table_donor_tip_b2015_text
-Suma de los presupuestos de los donantes en USD para 2015
+Haga clic para explorar actividades para el 2015
 
 #table_sector_title_transaction_text
 TRANSACCIONES IATI (USD)
 
 #table_sector_title_budget_text
 PRESUPUESTO IATI (USD)
+
+#table_sector_title_data_text
+CRS
 
 #table_sector_title_sector_text
 SECTOR
@@ -283,47 +346,50 @@ Transacciones IATI
 #table_sector_tip_title_budget_text
 Presupuestos IATI
 
-#table_sector_tip_title_crs_text
-Los datos se obtienen de No IATI (CRS y Otros) 2012
+#table_sector_tip_title_data_text
+OECD Creditor Reporting System
 
-#table_sector_tip_title_donor_text
-Haga clic para explorar
+#table_sector_tip_title_sector_text
+Las agrupaciones de códigos de propósito de la OECD CRS
+
+#table_sector_tip_subtitle_data_text
+Haga clic aquí para ordenar esta columna
+
+#table_sector_tip_subtitle_sector_text
+Haga clic aquí para ordenar esta columna
 
 #table_sector_tip_title_t2012_text
-Suma de las transacciones de los donantes en USD para el año 2012
+Haga clic aquí para ordenar esta columna
 
 #table_sector_tip_title_t2013_text
-Suma de las transacciones del sector en USD para el 2013
+Haga clic aquí para ordenar esta columna
 
 #table_sector_tip_title_t2014_text
-Suma de las transacciones del sector en USD para el 2014
+Haga clic aquí para ordenar esta columna
 
 #table_sector_tip_title_b2014_text
-Suma de los presupuestos del sector en USD para el 2014
+Haga clic aquí para ordenar esta columna
 
 #table_sector_tip_title_b2015_text
-Suma de los presupuestos del sector en USD para 2015
+Haga clic aquí para ordenar esta columna
 
-#table_sector_tip_crs_text
-Suma de transacciones para el sector de acuerdo con No IATI (CRS y Otros) en 2012
-
-#table_sector_tip_donor_text
-Haga clic para explorar
+#table_sector_tip_data_text
+Gasto total anual reportada por todos los reporteros de la OECD CRS para cada sector
 
 #table_sector_tip_t2012_text
-Suma de las transacciones del sector en USD para el año 2012
+Haga clic para explorar actividades para el 2012
 
 #table_sector_tip_t2013_text
-Suma de las transacciones del sector en USD para el 2013
+Haga clic para explorar actividades para el 2013
 
 #table_sector_tip_t2014_text
-Suma de las transacciones del sector en USD para el 2014
+Haga clic para explorar actividades para el 2014
 
 #table_sector_tip_b2014_text
-Suma de los presupuestos del sector en USD para el 2014
+Haga clic para explorar actividades para el 2014
 
 #table_sector_tip_b2015_text
-Suma de los presupuestos del sector en USD para 2015
+Haga clic para explorar actividades para el 2015
 
 #table_active_date_tip_text 
 Fecha final 
@@ -392,7 +458,10 @@ Original flava
 bandera
 
 #map_info_text 
-Este es un mapa de calor de todas las actividades para {country_name} que han sido proporcionados con ubicaciones precisas.
+Este es un mapa de calor de todas las actividades para {portal_name} que han sido proporcionados con ubicaciones precisas.
+
+#publisher_map_info_text
+Este es un mapa de calor de todas las actividades para {portal_name} que han sido proporcionados con ubicaciones precisas.
 
 #map_view_text 
 Ver todo
@@ -431,7 +500,7 @@ Esta tabla muestra los flujos de recursos externos que se utiliza en el desarrol
 CRS
 
 #donors_data_info1_text
-Todos los miembros de la OCDE y un número de otros países e instituciones informan anualmente a la <span class="bold italic"> acreedores de la OCDE Reporting System </span> en Ayuda Oficial al Desarrollo y otros flujos oficiales Estos datos se publican de forma retrospectiva : en de diciembre de cada año, el CRS se actualiza con los datos del año anterior (lo que es entre 12 y 23 meses de retraso) Si bien los datos que mira hacia atrás no es particularmente útil para la planificación del desarrollo - es un punto de muy útil y relativamente exacta referencia. Es particularmente útil para incluir marcadores de posición para los países y las instituciones que en la actualidad no informan a la IATI. los datos proporcionados en esta columna es el total de los desembolsos anuales (gastar) para el país. Los valores están expresados ​​en dólares corrientes.
+Todos los miembros de la OCDE y un número de otros países e instituciones informan anualmente a la <span class="bold italic"> acreedores de la OCDE Reporting System </span> en Ayuda Oficial al Desarrollo y otros flujos oficiales Estos datos se publican de forma retrospectiva : en de diciembre de cada año, el CRS se actualiza con los datos del año anterior (lo que es entre 12 y 23 meses de retraso) Si bien los datos que mira hacia atrás no es particularmente útil para la planificación del desarrollo - es un punto de muy útil y relativamente exacta referencia. Es particularmente útil para incluir marcadores de posición para los países y las instituciones que en la actualidad no informan a la IATI. los datos proporcionados en esta columna es el total de los desembolsos anuales (gastar) para el donante. Los valores están expresados ​​en dólares corrientes. "-" Indica que no hay datos de los sistemas centrales de ese donante.
 
 #donors_data_title2_text
 DONANTE
@@ -461,7 +530,7 @@ Spend se calcula sumando los desembolsos y gastos. Esta tabla muestra los compro
 ¿Cómo se calcula la información?
 
 #donor_transactions_data_description_text
-Spend se calcula sumando los desembolsos y gastos. Esta tabla te muestra todas las actividades reportadas por {donor} para {country_name} y ordenados por la actividad con el mayor gasto en la parte superior.
+Spend se calcula sumando los desembolsos y gastos. Esta tabla te muestra todas las actividades reportadas por {donor} para {portal_name} y ordenados por la actividad con el mayor gasto en la parte superior.
 
 #donor_budgets_data_description_title_text
 ¿Cómo se calcula la información?
@@ -509,7 +578,7 @@ Spend se calcula sumando los desembolsos y gastos. Esta tabla muestra los compro
 ¿Cómo se calcula la información?
 
 #sector_transactions_data_description_text
-Spend se calcula sumando los desembolsos y gastos. Esta tabla te muestra todas las actividades reportadas por {sector} para {country_name} y ordenados por la actividad con el mayor gasto en la parte superior.
+Spend se calcula sumando los desembolsos y gastos. Esta tabla te muestra todas las actividades reportadas por {sector} para {portal_name} y ordenados por la actividad con el mayor gasto en la parte superior.
 
 #sector_budgets_data_description_title_text
 ¿Cómo se calcula la información?
@@ -553,22 +622,28 @@ Un recuento de las actividades de la IATI que contienen coordenadas específicas
 El resto de los datos de la página proviene de la IATI. Normalmente, esto se habrá actualizado todos los días a la medianoche GMT.
 
 #view_active_text
-Todos los proyectos activos para {country_name}
+Todos los proyectos activos para {portal_name}
 
 #view_ended_text
-Todos los proyectos terminados para {country_name}
+Todos los proyectos terminados para {portal_name}
 
 #view_planned_text
-Todos los proyectos previstos para {country_name}
+Todos los proyectos previstos para {portal_name}
 
 #view_list_publishers_text
-Todos los Editores por {country_name}
+Todos los Editores por {portal_name}
 
 #view_list_activities_text
 Lista de actividades
 
+#view_list_transactions_text 
+El gasto total 
+
+#view_list_budgets_text 
+Presupuesto total
+
 #view_missing_text 
-Proyectos con fecha no válida rangos para {country_name}
+Proyectos con fecha no válida rangos para {portal_name}
 
 #active_data_description_title_text
 ¿Cómo se calcula la información?
@@ -610,7 +685,7 @@ Así es como se calcula los datos de los proyectos que faltan.
 ¿Cómo se calcula la información? 
 
 #map_data_description_text 
-Sólo las actividades que proporcionan lugares se muestran en el mapa. Las actividades también están limitados dentro de los límites de {country_name}.
+Sólo las actividades que proporcionan lugares se muestran en el mapa. Las actividades también están limitados dentro de los límites de {portal_name}.
 
 #data_title_text
 ¿Por qué es importante la calidad de datos
@@ -632,3 +707,87 @@ Cuando empezamos a desarrollar <span class="bold italic">d-portal</span> pensamo
 
 #data_paragraph6_text
 Esperamos que nuestra presentación de los datos - y las lagunas - ofrece un panorama útil del paisaje datos. Donde hay agujeros críticos en los datos que les animo a participar con sus asociados en el desarrollo para exigir que mejoran la calidad de los datos que componen actualmente disponibles.
+
+#download_csv_text
+Descargar tabla en formato CSV
+
+#table_publisher_country_title_text
+PAÍS
+
+#table_publisher_country_tip_title_text
+Países Receptores
+
+#table_publisher_explore_tip_text
+Haga clic aquí para explorar las actividades
+
+#table_publisher_tip_t2012_text
+Haga clic para explorar actividades para el 2012
+
+#table_publisher_tip_t2013_text
+Haga clic para explorar actividades para el 2013
+
+#table_publisher_tip_t2014_text
+Haga clic para explorar actividades para el 2014
+
+#table_publisher_tip_b2014_text
+Haga clic para explorar actividades para el 2014
+
+#table_publisher_tip_b2015_text
+Haga clic para explorar actividades para el 2015
+
+#title_publisher_countries_text 
+El dinero va a {countries_count} países. 
+
+#title_publisher_sectors_text 
+El dinero va a {sectors_count} sectores.
+
+#publisher_sectors_data_description_title_text
+¿Cómo se calcula la información?
+
+#publisher_sectors_data_description_text
+Esta tabla muestra los sectores a los que se están canalizando los flujos de recursos externos para el desarrollo:. Pasado, presente y futuro En la mayoría de los casos el valor de CRS será mucho más alto que la IATI, ya que hay una serie de grandes donantes que todavía no informan a la IATI ., y un número de editores IATI cuyos datos son de mala calidad las columnas muestran los siguientes datos:
+
+#publisher_sectors_data_title1_text
+DONANTE
+
+#publisher_sectors_data_info1_text
+La agencia (que puede ser un donante o una organización de ejecución) datos de informes a la IATI y / o CRS. Al hacer clic en esta celda le llevará a una lista de todas las actividades comunicadas a la IATI por esta agencia. La lista está ordenada por el valor de 2012 los desembolsos (la figura más grande informó sea por CRS o IATI)
+
+#publisher_sectors_data_title2_text
+IATI PASAR
+
+#publisher_sectors_data_info2_text
+Tres columnas contienen el total de desembolsos y gastos reportados a la IATI para los actuales y los anteriores dos años. La primera columna se efectuará siempre por el mismo año que los datos más recientes de CRS , lo que permite la comparación entre los dos sistemas. Al hacer clic en cualquier celda le llevará a aquellos proyectos que componen el valor de la celda (por orden de su contribución a ese valor) las células que contienen. "-" indican que la organización no ha publicado todavía en células IATI contienen "0" son una indicación de aviso de mala calidad a la IATI.
+
+#publisher_sectors_data_title3_text
+IATI PRESUPUESTO
+
+#publisher_sectors_data_info3_text
+Total de presupuestos de la actividad para este y el próximo año reportados a IATI Al hacer clic en cualquier celda le llevará a los proyectos que componen el valor de la celda (por orden de su contribución a ese valor) Las células que contienen. "-" Indique que la organización no ha publicado aún la IATI. las células que contienen "0 " son una indicación de la mala calidad de informes a la IATI.
+
+#publisher_countries_data_description_title_text
+¿Cómo se calcula la información?
+
+#publisher_countries_data_description_text
+Esta tabla muestra los sectores a los que se están canalizando los flujos de recursos externos para el desarrollo:. Pasado, presente y futuro En la mayoría de los casos el valor de CRS será mucho más alto que la IATI, ya que hay una serie de grandes donantes que todavía no informan a la IATI ., y un número de editores IATI cuyos datos son de mala calidad las columnas muestran los siguientes datos:
+
+#publisher_countries_data_title1_text
+PAÍS
+
+#publisher_countries_data_info1_text
+La agencia (que puede ser un donante o una organización de ejecución) datos de informes a la IATI y / o CRS. Al hacer clic en esta celda le llevará a una lista de todas las actividades comunicadas a la IATI por esta agencia. La lista está ordenada por el valor de 2012 los desembolsos (la figura más grande informó sea por CRS o IATI)
+
+#publisher_countries_data_title2_text
+IATI PASAR
+
+#publisher_countries_data_info2_text
+Tres columnas contienen el total de desembolsos y gastos reportados a la IATI para los actuales y los anteriores dos años. La primera columna se efectuará siempre por el mismo año que los datos más recientes de CRS , lo que permite la comparación entre los dos sistemas. Al hacer clic en cualquier celda le llevará a aquellos proyectos que componen el valor de la celda (por orden de su contribución a ese valor) las células que contienen. "-" indican que la organización no ha publicado todavía en células IATI contienen "0" son una indicación de aviso de mala calidad a la IATI.
+
+#publisher_countries_data_title3_text
+IATI PRESUPUESTO
+
+#publisher_countries_data_info3_text
+Total de presupuestos de la actividad para este y el próximo año reportados a IATI Al hacer clic en cualquier celda le llevará a los proyectos que componen el valor de la celda (por orden de su contribución a ese valor) Las células que contienen. "-" Indique que la organización no ha publicado aún la IATI. las células que contienen "0 " son una indicación de la mala calidad de informes a la IATI.
+
+#missing_data_text 
+Esta actividad no se encuentra o no se encuentra.

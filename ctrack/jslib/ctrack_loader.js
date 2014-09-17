@@ -19,6 +19,7 @@ ctrack_loader=function(args){
 	
 	head.load(
 		root+"jslib/jquery.js",
+		root+"jslib/chosen.jquery.min.js",
 		root+"jslib/ctrack.min.js",
 		root+"jslib/highcharts.js",
 //		root+"jslib/ctrack.js",
@@ -26,8 +27,8 @@ ctrack_loader=function(args){
 		
 		args.master=$(args.master);
 
-		var ctrack=require("ctrack");
-		ctrack.setup(args);
+		window.ctrack=require("ctrack");
+		window.ctrack.setup(args);
 
 	});
 

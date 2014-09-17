@@ -28,8 +28,9 @@ query.mustbenumber=function(v)
 	return undefined;
 }
 
-query.maybenumber=function(v)
+query.maybenumber=function(v,ty)
 {
+	if(ty=="char") { return ""+v; } // force string
 	return query.mustbenumber(v) || v;
 }
 
@@ -131,6 +132,7 @@ query.getsql_select=function(q,qv){
 		s=s+" ) AS "+ret+" ";
 		ss.push(s);
 	}
+//these calculations need to be turned into generic prefix functions.
 	var calc={
 		"sum_of_percent_of_trans_usd":function(){
 			percents("sum_of_percent_of_trans_usd","trans_usd","SUM");
@@ -156,11 +158,20 @@ query.getsql_select=function(q,qv){
 		"percent_of_budget_value":function(){
 			percents("percent_of_budget_value","budget_value","");
 		},
+		"round0_location_longitude":function(){
+			ss.push(" ROUND(location_longitude,0) AS round0_location_longitude");
+		},
+		"round0_location_latitude":function(){
+			ss.push(" ROUND(location_latitude,0) AS round0_location_latitude");
+		},
 		"round1_location_longitude":function(){
 			ss.push(" ROUND(location_longitude,1) AS round1_location_longitude");
 		},
 		"round1_location_latitude":function(){
 			ss.push(" ROUND(location_latitude,1) AS round1_location_latitude");
+		},
+		"count_aid":function(){
+			ss.push(" COUNT(DISTINCT aid) AS count_aid");
 		},
 		"count":function(){
 			ss.push(" COUNT(*) AS count");
@@ -317,7 +328,7 @@ query.getsql_where=function(q,qv){
 						if( v.length==10 && sb && sb.length==4 && ty=="int") // date string, convert to number if dest is an int
 						{
 							v=iati_xml.isodate_to_number(v);
-							ss.push( " "+n+" "+eq+" $"+n+qe+" " ); qv["$"+n+qe]=query.maybenumber(v);
+							ss.push( " "+n+" "+eq+" $"+n+qe+" " ); qv["$"+n+qe]=query.maybenumber(v,ty);
 						}
 						else
 						if(sa[1]) // there was an "|"
@@ -327,7 +338,7 @@ query.getsql_where=function(q,qv){
 						}
 						else
 						{
-							ss.push( " "+n+" "+eq+" $"+n+qe+" " ); qv["$"+n+qe]=query.maybenumber(v);
+							ss.push( " "+n+" "+eq+" $"+n+qe+" " ); qv["$"+n+qe]=query.maybenumber(v,ty);
 						}
 					}
 					else
@@ -342,7 +353,7 @@ query.getsql_where=function(q,qv){
 						for(var i=0;i<v.length;i++)
 						{
 							so.push( " $"+n+"_"+i+" " )
-							qv["$"+n+"_"+i]=query.maybenumber(v[i]);
+							qv["$"+n+"_"+i]=query.maybenumber(v[i],ty);
 						}
 						ss.push( " "+n+" IN ("+so.join(",")+") " );
 					}
@@ -525,6 +536,18 @@ if(true)
 		}
 	});
 
+	var send_json=function(r)
+	{
+		if(q.callback)
+		{
+			res.jsonp(r); // seems to only get headers right with a callback
+		}
+		else
+		{
+			res.set('Content-Type', 'application/json');
+			res.json(r);
+		}
+	};
 	db.run(";", function(err, row){
 		if(q.form=="xml")
 		{
@@ -585,7 +608,7 @@ if(true)
 			}
 		}
 		else
-		if(q.form=="jcsv") // a jsoned csv (much smaller for large table data)
+		if(q.form=="jcsv") // a jsoned csv (much smaller than json for large table data)
 		{
 			if(r.rows[0])
 			{
@@ -603,17 +626,17 @@ if(true)
 						t.push( v[n] || null );
 					});
 				}
-				res.jsonp(ta);
+				send_json(ta);
 			}
 			else
 			{
-				res.jsonp([]); // nothing to see, but still trigger callback
+				send_json([]); // nothing to see, but still trigger callback
 			}
 		}
 		else
 		{
 			r.time=(Date.now()-q.start_time)/1000;
-			res.jsonp(r);
+			send_json(r);
 		}
 		dstore_sqlite.close(db);
 	});

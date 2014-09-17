@@ -2,7 +2,7 @@
 お金はどこから来るのでしょうか？
 
 #table_declare_text
-*探求するために、次のセルのいずれかをクリックして
+*探求するために、次のセルのいずれかをクリックして。説明のための任意のセル上にマウスを移動。それに応じて並べ替えるには、列のタイトルをクリックします。
 
 #money_title_icon_alt_text
 国民はお金がどこにあるか知って欲しい！
@@ -12,6 +12,30 @@
 
 #alert_no_iati_tip_text
 このドナーはまだIATIに公開されません。
+
+#alert_nodata1_text 
+一部のデータ品質の問題は、このデータが存在する。 <a href="#view=data_quality">データ品質についてお読みください。</a>を 
+
+#alert_nodata1_tip_text 
+一部のデータ品質の問題は - 詳細はクリック 
+
+#alert_nodata2_text 
+このドナーがIATIにいくつかのデータを公開していますが、データの低品質は、私たちは現在、ここでそれを表示することができませんことを意味します。 <a href="#view=data_quality">データ品質の詳細については、こちらをクリックしてください。あなたはそれらのデータとデータの品質を議論したい場合は、こちら</a>直接出版社、連絡してください。 
+
+#alert_nodata2_tip_text 
+データ品質の問題は - 詳細はクリック 
+
+#alert_nodata3_text 
+いいえリソース·フローは、この期間中に、この部門に報告されなかった。 
+
+#alert_nodata3_tip_text 
+いいえリソース·フローは、この期間中に、この部門に報告されなかった 
+
+#alert_nodata4_text 
+一部のデータが公開されているが、データの低品質は、私たちは現在、ここでそれを表示することができませんことを意味します。 <a href="#view=data_quality">データ品質の詳細については、こちらをクリックしてください。</a>を 
+
+#alert_nodata4_tip_text 
+データ品質の問題は - 詳細はクリック
 
 #active_icon_alt_text
 アクティブなプロジェクトのアイコン
@@ -43,11 +67,14 @@ d-portal.org は非常に初期のまだ開発中で、アルファリリース�
 #mainback_tip_text
 戻る開発ポータルへ
 
+#mainback_publisher_tip_text
+戻る開発ポータルへ: 出版社版
+
 #back_text
-戻る開発ポータルへ
+戻る{portal_name}
 
 #crumbname_main_text
-{country_name}  ホーム
+{portal_name}  ホーム
 
 #crumbname_donors_text
 ドナー リスト
@@ -88,9 +115,6 @@ d-portal.org は非常に初期のまだ開発中で、アルファリリース�
 #crumbname_list_publishers_text 
 パブリッシャ 
 
-#crumbname_list_activities_text 
-総プロジェクト
-
 #crumbname_missing_text 
 不足しているプロジェクト
 
@@ -99,6 +123,21 @@ d-portal.org は非常に初期のまだ開発中で、アルファリリース�
 
 #crumbname_map_text 
 アクティビティマップ
+
+#crumbname_publisher_text
+発行元のホーム
+
+#crumbname_publisher_countries_text
+国リスト
+
+#crumbname_list_transactions_text 
+取引 
+
+#crumbname_list_budgets_text 
+予算 
+
+#crumbname_list_activities_text 
+活動
 
 #data_investigate_text
 データの研究者が、私たちはあなたを必要！あなたは場違い何を見つけた場合、開発チームにご連絡ください。
@@ -140,7 +179,7 @@ IATIパブリッシャ
 終了したプロジェクトの合計数
 
 #stats_total_tip_text
-{country_name}について算出したプロジェクトの総数
+{portal_name}について算出したプロジェクトの総数
 
 #stats_planned_tip_text
 将来的に計画されたプロジェクトの総数
@@ -172,6 +211,12 @@ IATIパブリッシャ
 #list_donor_back_text
 バックドナーリストに
 
+#list_sector_back_text
+バックセクタリストへ
+
+#list_country_back_text 
+バックカントリーリストへ
+
 #view_donor_transactions_text
 {year}内の {donor}の による総支出
 
@@ -199,6 +244,9 @@ IATIパブリッシャ
 #amount_text
 合計
 
+#donor_activities_spend_text
+コミットメント総額
+
 #donor_activities_percentage_tip_text
 費やされた合計コミットメントの割合
 
@@ -214,8 +262,14 @@ IATI支出 (USD)
 #table_donor_title_budget_text
 IATIバジェット (USD) 
 
+#table_donor_title_data_text
+CRS
+
 #table_donor_title_donor_text
 供血
+
+#table_donor_subtitle_donor_text
+名称
 
 #table_donor_tip_title_transaction_text
 IATI取引
@@ -223,29 +277,35 @@ IATI取引
 #table_donor_tip_title_budget_text
 IATI予算
 
-#table_donor_tip_title_crs_text
-データは、 CRS 2012から供給されている
+#table_donor_tip_title_data_text
+OECD Creditor Reporting System
 
 #table_donor_tip_title_donor_text
-資金源 
+資金源
+
+#table_donor_tip_subtitle_data_text
+この列をソートするためにクリック
+
+#table_donor_tip_subtitle_donor_text
+この列をソートするためにクリック 
 
 #table_donor_tip_title_t2012_text 
-2012年の米中のドナーの取引の合計 
+この列をソートするためにクリック
 
 #table_donor_tip_title_t2013_text 
-2013米ドルでのドナーの取引の合計 
+この列をソートするためにクリック
 
 #table_donor_tip_title_t2014_text 
-2014のための米中のドナーの取引の合計 
+この列をソートするためにクリック
 
 #table_donor_tip_title_b2014_text 
-2014のための米中のドナーの予算の合計 
+この列をソートするためにクリック
 
 #table_donor_tip_title_b2015_text 
-2015年の米中のドナーの予算の合計 
+この列をソートするためにクリック
 
-#table_donor_tip_crs_text 
-2012年に非IATI（CRSおよびその他）によると、このドナーについての取引の合計 
+#table_donor_tip_data_text 
+2012年にドナーの年間総支出
 
 #table_donor_tip_donor_text 
 ソース活動を探索するクリック
@@ -254,25 +314,28 @@ IATI予算
 ソース活動を探索するクリック
 
 #table_donor_tip_t2012_text 
-2012年の米中のドナーの取引の合計 
+2012のソース活動を探索するクリック 
 
 #table_donor_tip_t2013_text 
-2013米ドルでのドナーの取引の合計 
+2013のソース活動を探索するクリック 
 
 #table_donor_tip_t2014_text 
-2014のための米中のドナーの取引の合計 
+2014ののソース活動を探索するクリック 
 
 #table_donor_tip_b2014_text 
-2014のための米中のドナーの予算の合計 
+2014のソース活動を探索するクリック 
 
 #table_donor_tip_b2015_text 
-2015年の米中のドナーの予算の合計
+2015のソース活動を探索するクリック
 
 #table_sector_title_transaction_text
 IATI取引 (USD) 
 
 #table_sector_title_budget_text
 IATIバジェット (USD) 
+
+#table_sector_title_data_text
+CRS
 
 #table_sector_title_sector_text
 セクター
@@ -283,47 +346,50 @@ IATI取引
 #table_sector_tip_title_budget_text
 IATI予算
 
-#table_sector_tip_title_crs_text
-データは、 2012yearには非IATI （ CRSおよびその他）から供給されている
+#table_sector_tip_title_data_text
+OECD Creditor Reporting System
 
-#table_sector_tip_title_donor_text
-探索するクリック
+#table_sector_tip_title_sector_text
+OECDのCRSの目的コードのグループ化
+
+#table_sector_tip_subtitle_data_text
+この列をソートするためにクリック
+
+#table_sector_tip_subtitle_sector_text
+この列をソートするためにクリック
 
 #table_sector_tip_title_t2012_text
-2012yearの米中のセクターの取引の合計
+この列をソートするためにクリック
 
 #table_sector_tip_title_t2013_text
-2013米ドルでのセクターの取引の合計
+この列をソートするためにクリック
 
 #table_sector_tip_title_t2014_text
-2014用の米でのセクターの取引の合計
+この列をソートするためにクリック
 
 #table_sector_tip_title_b2014_text
-2014のため、米ドルのセクター予算の合計
+この列をソートするためにクリック
 
 #table_sector_tip_title_b2015_text
-2015yearの米中のセクターの予算の合計
+この列をソートするためにクリック
 
-#table_sector_tip_crs_text
-2012yearに非IATI （ CRSおよびその他）によると、このssctorのトランザクションの合計
-
-#table_sector_tip_donor_text
-探索するクリック
+#table_sector_tip_data_text
+各セクタのすべてのOECDのCRS記者によって報告された年間総支出
 
 #table_sector_tip_t2012_text
-2012yearの米中のセクターの取引の合計
+2012のソース活動を探索するクリック
 
 #table_sector_tip_t2013_text
-2013米ドルでのセクターの取引の合計
+2013のソース活動を探索するクリック
 
 #table_sector_tip_t2014_text
-2014用の米でのセクターの取引の合計
+2014のソース活動を探索するクリック
 
 #table_sector_tip_b2014_text
-2014のため、米ドルのセクター予算の合計
+2014のソース活動を探索するクリック
 
 #table_sector_tip_b2015_text
-2015yearの米中のセクターの予算の合計
+2015のソース活動を探索するクリック
 
 #table_active_date_tip_text
 日付エンディング
@@ -395,7 +461,10 @@ Español
 フラグ
 
 #map_info_text
-これは正確な位置が提供されている{country_name}のためのすべての活動のヒートマップです。
+これは正確な位置が提供されている{portal_name}のためのすべての活動のヒートマップです。
+
+#publisher_map_info_text
+これは正確な位置が提供されている{portal_name}のためのすべての活動のヒートマップです。
 
 #map_view_text 
 すべてを表示
@@ -434,7 +503,7 @@ d-portal.org について
 CRS
 
 #donors_data_info1_text
-OECDおよびその他の国や機関の数のすべてのメンバーは、政府開発援助やその他の関係者に報告システム< /スパン>このデータは、遡及的に公開されて流れ、 <span class="bold italic">OECDの債権者</span>に毎年報告：で後ろ向きのデータは、開発計画のために特に有用ではありませんが、各年の12月には、CRSは、（そのようにされた日のうち12と23か月の間）は前年からのデータで更新されます - それは非常に有用かつ比較的正確なポイントである参照。これは、現在IATIに報告していない国や機関のためのプレースホルダを含む場合に特に便利です。このコラムで提供されたデータは、国の年間総支出（支出）である。値は、現在の米ドル表示となっております。
+OECDおよびその他の国や機関の数のすべてのメンバーは、政府開発援助やその他の関係者に報告システム< /スパン>このデータは、遡及的に公開されて流れ、 <span class="bold italic">OECDの債権者</span>に毎年報告：で後ろ向きのデータは、開発計画のために特に有用ではありませんが、各年の12月には、CRSは、（そのようにされた日のうち12と23か月の間）は前年からのデータで更新されます - それは非常に有用かつ比較的正確なポイントである参照。これは、現在IATIに報告していない国や機関のためのプレースホルダを含む場合に特に便利です。このコラムで提供されたデータは、国の年間総支出（支出）である。値は、現在の米ドル表示となっております。" - "、ドナーにはCRSのデータがないことを示している。
 
 #donors_data_title2_text
 供血
@@ -464,7 +533,7 @@ IATI予算
 データはどのように計算されますか？
 
 #donor_transactions_data_description_text
-支出は、支出や支出を加算して計算されます。このテーブルには、あなたに{country_name}ため{donor}によって報告され、一番上に、最も高い支出との活動によってソートされたすべてのアクティビティが表示されます。
+支出は、支出や支出を加算して計算されます。このテーブルには、あなたに{portal_name}ため{donor}によって報告され、一番上に、最も高い支出との活動によってソートされたすべてのアクティビティが表示されます。
 
 #donor_budgets_data_description_title_text
 データはどのように計算されますか？
@@ -512,7 +581,7 @@ IATI予算
 データはどのように計算されますか？
 
 #sector_transactions_data_description_text
-支出は、支出や支出を加算して計算されます。このテーブルには、あなたに {country_name} ため {sector} によって報告され、一番上に、最も高い支出との活動によってソートされたすべてのアクティビティが表示されます。
+支出は、支出や支出を加算して計算されます。このテーブルには、あなたに {portal_name} ため {sector} によって報告され、一番上に、最も高い支出との活動によってソートされたすべてのアクティビティが表示されます。
 
 #sector_budgets_data_description_title_text
 データはどのように計算されますか？
@@ -556,22 +625,28 @@ Development Initiatives'(DI) 投資は貧困レポートを終了することに
 ページ上のデータの残りの部分はIATIから来ている。通常、これは真夜中GMTに毎日更新されています。
 
 #view_active_text
-{country_name}のすべてのアクティブなプロジェクト
+{portal_name}のすべてのアクティブなプロジェクト
 
 #view_ended_text
-{country_name}のためのすべての終了プロジェクト
+{portal_name}のためのすべての終了プロジェクト
 
 #view_planned_text
-{country_name}のためのすべての計画されたプロジェクト
+{portal_name}のためのすべての計画されたプロジェクト
 
 #view_list_publishers_text
-{country_name}のためのすべての出版社
+{portal_name}のためのすべての出版社
 
 #view_list_activities_text
 アクティビティのリスト
 
+#view_list_transactions_text 
+総支出 
+
+#view_list_budgets_text 
+総予算
+
 #view_missing_text 
-無効な日付とのプロジェクトは{country_name}のための範囲
+無効な日付とのプロジェクトは{portal_name}のための範囲
 
 #active_data_description_title_text
 データはどのように計算されますか？
@@ -613,7 +688,7 @@ Development Initiatives'(DI) 投資は貧困レポートを終了することに
 データはどのように計算されますか？ 
 
 #map_data_description_text 
-場所を提供するだけの活動は、地図上に表示されます。活動はまた、{country_name}の境界内に制限されています。
+場所を提供するだけの活動は、地図上に表示されます。活動はまた、{portal_name}の境界内に制限されています。
 
 #data_title_text
 なぜデータ品質の問題
@@ -635,3 +710,87 @@ d-portalは、主要な開発パートナーの数のベストプラクティス
 
 #data_paragraph6_text
 とのギャップ - - データ景観の便利な概要を提供し、我々は、我々のデータの提示があることを願っています。データの重要な穴がある場合、我々は、彼らが現在使用可能にするデータの品質を向上させることを要求するために、開発パートナーと係合することをお勧めだろう。
+
+#download_csv_text
+CSVとして表をダウンロード
+
+#table_publisher_country_title_text
+カントリー
+
+#table_publisher_country_tip_title_text
+被援助国
+
+#table_publisher_explore_tip_text
+活動を探索するクリック
+
+#table_publisher_tip_t2012_text 
+2012のソース活動を探索するクリック 
+
+#table_publisher_tip_t2013_text 
+2013のソース活動を探索するクリック 
+
+#table_publisher_tip_t2014_text 
+2014ののソース活動を探索するクリック 
+
+#table_publisher_tip_b2014_text 
+2014のソース活動を探索するクリック 
+
+#table_publisher_tip_b2015_text 
+2015のソース活動を探索するクリック
+
+#title_publisher_countries_text 
+お金は{countries_count}国に行く。 
+
+#title_publisher_sectors_text 
+お金は{sectors_count}セクタに行く。
+
+#publisher_sectors_data_description_title_text 
+お金はどの国に行くのですか？ 
+
+#publisher_sectors_data_description_text
+このテーブルには、外部開発リソースフローが流されているためにセクターを示しています。まだIATIに報告していない、大きなドナーの数があるので、過去、現在、未来ほとんどの場合、CRSの値がIATIより多く高くなります。、データの列のデータを表示する低品質であるIATI出版社の数：
+
+#publisher_sectors_data_title1_text
+セクター
+
+#publisher_sectors_data_info1_text
+ここに記載されているセクターは、OECD CRSの目的コードをグループ化したものです。 197 CRSの目的コードは現在ありアール。 DIは論文のセクターに対するすべての目的コードをマッピングしています。リストは（金IATIについて報告しましたCRSによる大きな画像図のいずれか）2012年支出の値によって順序付けされている 
+
+#publisher_sectors_data_title2_text
+IATI過ごす
+
+#publisher_sectors_data_info2_text
+3つの列は、最初の列は、常に二つのシステム間の比較を可能にする、最新のCRSのデータと同じ年のためになります。現在と以前の2年間はIATIに報告総支出と支出が含まれています。任意のセルをクリックするとが表示されます（その値への貢献のためにリストされている）セルの値を構成するこれらのプロジェクトが含まれているセル"-" 。組織はまだ"0"を含むIATI細胞に公開されていないことを示すためには、質の悪い報告の指標であるIATIへ。
+
+#publisher_sectors_data_title3_text
+IATI予算
+
+#publisher_sectors_data_info3_text
+このため全活性レベルの予算と来年は（その値への貢献のためにリストされている）は、細胞内含有する細胞を値を構成するこれらのプロジェクトに行くことができます任意のセルにIATIクリックすることが報告"-"と表示され組織がまだIATIに公開されていないこと。"0"を含む細胞はIATIへの報告低品質の指標である。
+
+#publisher_countries_data_description_title_text
+データはどのように計算されますか？
+
+#publisher_countries_data_description_text
+このテーブルには、外部開発リソースフローが流されているためにセクターを示しています。まだIATIに報告していない、大きなドナーの数があるので、過去、現在、未来ほとんどの場合、CRSの値がIATIより多く高くなります。、データの列のデータを表示する低品質であるIATI出版社の数：
+
+#publisher_countries_data_title1_text
+セクター
+
+#publisher_countries_data_info1_text
+ここに記載されているセクターは、OECD CRSの目的コードをグループ化したものです。 197 CRSの目的コードは現在ありアール。 DIは論文のセクターに対するすべての目的コードをマッピングしています。リストは（金IATIについて報告しましたCRSによる大きな画像図のいずれか）2012年支出の値によって順序付けされている 
+
+#publisher_countries_data_title2_text
+IATI過ごす
+
+#publisher_countries_data_info2_text
+3つの列は、最初の列は、常に二つのシステム間の比較を可能にする、最新のCRSのデータと同じ年のためになります。現在と以前の2年間はIATIに報告総支出と支出が含まれています。任意のセルをクリックするとが表示されます（その値への貢献のためにリストされている）セルの値を構成するこれらのプロジェクトが含まれているセル"-" 。組織はまだ"0"を含むIATI細胞に公開されていないことを示すためには、質の悪い報告の指標であるIATIへ。
+
+#publisher_countries_data_title3_text
+IATI予算
+
+#publisher_countries_data_info3_text
+このため全活性レベルの予算と来年は（その値への貢献のためにリストされている）は、細胞内含有する細胞を値を構成するこれらのプロジェクトに行くことができます任意のセルにIATIクリックすることが報告"-"と表示され組織がまだIATIに公開されていないこと。"0"を含む細胞はIATIへの報告低品質の指標である。
+
+#missing_data_text 
+この活動は存在しないか、見つかりません。

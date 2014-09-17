@@ -1,6 +1,9 @@
 #welcome_text
 d-portal.org へようこそ
 
+#publishers_welcome_text
+d-portal.org へようこそ : 出版社版
+
 #alert1_text
 d-portal.org はアルファリリース中旬4月に予定され、非常に初期のまだ開発中です。あなたの忍耐をありがとう！すべてのフィードバックを提供してください
 
@@ -12,6 +15,9 @@ d-portal.org はアルファリリース中旬4月に予定され、非常に初
 
 #tagline_text
 あなたは、開発データを理解に役立ちます。
+
+#publishers_tagline_text
+出版社版
 
 #install_button_text
 インストール
@@ -57,6 +63,9 @@ d-portal.org はアルファリリース中旬4月に予定され、非常に初
 
 #read_more_text
 d-portalについての詳細を読む
+
+#publisher_portal_text 
+出版社版
 
 #links_title_text 
 関連するリンク
@@ -125,8 +134,8 @@ d-portal.org は、リソース·フローを追跡し、国ベースの情報�
 #about_paragraph6_text
 オープンソースのプラットフォームです。
 
-#about_paragraph7_text
-それは、現在、どの国のための一般的な展開を提供しますが、それは現地のニーズを満たすために、国内にカスタマイズされている特定の意図して開発されました。あなたは、特定の国のためにカスタマイズされたバージョンを作成し、当社のインストールページ<i>（まもなく利用できるようにする）</i>を見ることができた方法の詳細については。
+#about_paragraph7_text 
+それが現在、どの国のための一般的な展開を提供しますが、それは、地域のニーズを満たすために、国のカスタマイズされて、特定の意図を持って開発されました。あなたが特定の国のためにカスタマイズされたバージョンを作成することができます方法の詳細については、<a href="#install" class="how">インストールする方法</a>を参照してください。
 
 #about_paragraph8_text
 資金調達
@@ -219,6 +228,15 @@ d-portalプロジェクトの中心には、誰でもどこでも、D-ポータ�
 #install_paragraph4_text 
 HTML, CSS, Javascriptがウェブの技術であり、広く使用されていると理解されているので、これは簡単に導入、および容易な再コンフィギュレーション/カスタム化 ための他の人が簡単に採択のためのよい選択、であると考えています。
 
+#install_title2_text 
+d-portalウィジェットを作成する方法 
+
+#install_paragraph5_text 
+アイフレームを使用することにより、d-portalジェネレータを使用すると、任意のHTML対応のパブリッシングプラットフォームのd-portalのセクションを埋め込むことができます。すなわち。などWordpressのブログの記事、Tumblrの投稿、ウェブサイト 
+
+#install_paragraph6_text 
+訪問<a href="http://d-portal.org/ctrack.html#view=generator" class="country_portal">http://d-portal.org/ctrack.html#view=generator</a> d-portalウィジェットを作成します。
+
 #github_tip_text
 GitHubの上のd-portal.org をご覧ください
 
@@ -227,6 +245,9 @@ GitHubの上のd-portal.org をご覧ください
 
 #github_info2_text
 d-portal.org は、現在開発され、物事は常に変化しているように設計されています。私達にあなたの提案、バグレポート、問題や接触の <a href="mailto:queries@d-portal.org" target="_blank" class="git small"> queries@d-portal.org </a> を送る
+
+#github_info3_text
+あなたはd-portalでニュースを最新に保つためにご希望の場合<a href="https://groups.google.com/forum/?hl=en-GB#!members/d-portal-list" class="git small">のGoogleグループ</a>を購読してください。
 
 #footer_pick_text
 別の国を選択
@@ -281,3 +302,45 @@ Dashは、国固有のものではありませんので、すべての国全体�
 
 #dash_paragraph4_text 
 Dash現在の位置はアクセスできますか<a href="http://d-portal.org/ctrack.html?#view=dash" class="dash_link">http://d-portal.org/ctrack.html?#view=dash</a>Dashは、新しい機能であり、まだ開発されています。
+
+#publisher_title_text
+出版社、著者の探求
+
+#publisher_paragraph1_text
+それらのデータを探索するには、以下の出版社を選ぶ。
+
+#sources_title_text 
+データソースへの帰属とリンク 
+
+#sources_header1_text 
+データ 
+
+#sources_header2_text 
+ソース名 
+
+#sources_header3_text 
+ソースURL 
+
+#sources_data1_text 
+通貨 
+
+#sources_data2_text 
+国Flags 
+
+#sources_data3_text 
+国の背景 
+
+#sources_data4_text 
+国の名前 
+
+#sources_data5_text 
+2文字の国コード 
+
+#sources_data6_text 
+ウィキペディアパブリックドメインの画像のみ 
+
+#sources_data7_text 
+公共Googleスプレッドシート
+
+#sources_data8_text 
+Pixabayパブリックドメインの画像のみ

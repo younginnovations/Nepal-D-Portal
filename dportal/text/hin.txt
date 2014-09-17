@@ -1,6 +1,9 @@
 #welcome_text
 d-portal.org में आपका स्वागत है
 
+#publishers_welcome_text
+d-portal.org में आपका स्वागत है : प्रकाशक संस्करण
+
 #alert1_text
 d-portal.org अप्रैल के मध्य अल्फा रिलीज के लिए निर्धारित है, बहुत जल्दी विकास में अब भी है . अपने मरीज के लिए धन्यवाद! Ooops कोई प्रतिक्रिया
 
@@ -12,6 +15,9 @@ d-portal.org अप्रैल के मध्य अल्फा रिली
 
 #tagline_text
 आप विकास डेटा को समझने में मदद करना.
+
+#publishers_tagline_text
+प्रकाशक संस्करण
 
 #install_button_text
 प्रकाशक
@@ -57,6 +63,9 @@ d-portal.org अप्रैल के मध्य अल्फा रिली
 
 #read_more_text 
 d-portal के बारे में और अधिक पढ़ें
+
+#publisher_portal_text 
+प्रकाशक संस्करण
 
 #links_title_text 
 प्रासंगिक लिंक
@@ -125,7 +134,7 @@ d-portal.org संसाधन बहती पटरियों कि एक
 एक खुला स्रोत मंच है .
 
 #about_paragraph7_text
-यह वर्तमान में किसी भी देश के लिए एक सामान्य तैनाती प्रदान करता है जबकि यह स्थानीय जरूरतों को पूरा करने के लिए देश में अनुकूलित किया जा रहा है की विशिष्ट इरादे से विकसित किया गया है . यदि आप किसी विशेष देश के लिए एक अनुकूलित संस्करण बनाने के हमारे स्थापित करें पेज <i> (जल्द ही उपलब्ध कराया जा सकता है) </i> देख सकता है पर अधिक जानकारी के लिए .
+यह वर्तमान में किसी भी देश के लिए एक सामान्य तैनाती प्रदान करता है जबकि यह स्थानीय जरूरतों को पूरा करने में देश अनुकूलित किया जा रहा है की विशिष्ट इरादे से विकसित किया गया है. आप एक विशिष्ट देश के लिए एक अनुकूलित संस्करण बना सकते हैं पर अधिक जानकारी के लिए, <a href="#install" class="how"> कैसे स्थापित करें </a> देखें.
 
 #about_paragraph8_text
 अनुदान
@@ -217,6 +226,15 @@ d-portal परियोजना के दिल में किसी को
 #install_paragraph4_text 
 HTML, सीएसएस, जावास्क्रिप्ट वेब की प्रौद्योगिकी हैं, और व्यापक रूप से इस्तेमाल किया है और समझा जाता है, हम इस आसान तैनाती के लिए, और आसान  फिर से विन्यास / अनुकूलन के लिए दूसरों के द्वारा आसान गोद लेने के लिए एक अच्छा विकल्प है, विश्वास है.
 
+#install_title2_text 
+एक d-portal विजेट बनाने के लिए कैसे 
+
+#install_paragraph5_text 
+Iframes का उपयोग करके, d-portal जेनरेटर आप किसी HTML-सक्षम प्रकाशन मंच में d-portal के वर्गों एम्बेड करने के लिए अनुमति देता है; यानी. आदि WordPress ब्लॉग पोस्ट, Tumblr पोस्ट, एक वेबसाइट
+
+#install_paragraph6_text 
+भेंट <a href="http://d-portal.org/ctrack.html#view=generator" class="country_portal">http://d-portal.org/ctrack.html#view=generator</a> एक d-portal विजेट बनाने के लिए.
+
 #github_tip_text
 Github पर d-portal.org जाएँ
 
@@ -225,6 +243,9 @@ Github पर d-portal.org जाएँ
 
 #github_info2_text
 d-portal.org वर्तमान में विकसित और चीजें लगातार बदल रहे हैं इसलिए तैयार किया जा रहा है. हमें अपने सुझाव, बग रिपोर्ट और मुद्दों या संपर्क <a href="mailto:queries@d-portal.org" target="_blank" class="git small"> queries@d-portal.org </a> भेजें
+
+#github_info3_text
+आप d-portal पर खबर के साथ तारीख तक रखने के लिए करना चाहते हैं <a href="https://groups.google.com/forum/?hl=en-GB#!members/d-portal-list" class="git small"> गूगल समूह </a> की सदस्यता कृपया.
 
 #footer_pick_text 
 एक अन्य देश उठाओ 
@@ -273,3 +294,45 @@ Dash देश विशिष्ट नहीं है तो आप सभी
 
 #dash_paragraph4_text 
 Dash में मौजूदा समय में पहुंचा जा सकता है<a href="http://d-portal.org/ctrack.html?#view=dash" class="dash_link">http://d-portal.org/ctrack.html?#view=dash</a>Dash एक नई सुविधा है और अभी भी विकसित किया जा रहा है.
+
+#publisher_title_text
+एक प्रकाशक का अन्वेषण
+
+#publisher_paragraph1_text
+अपने डेटा का पता लगाने के लिए नीचे एक प्रकाशक उठाओ.
+
+#sources_title_text 
+डेटा सूत्रों के रोपण और लिंक 
+
+#sources_header1_text 
+डाटा 
+
+#sources_header2_text 
+स्रोत नाम 
+
+#sources_header3_text 
+स्रोत यूआरएल 
+
+#sources_data1_text 
+मुद्रा 
+
+#sources_data2_text 
+देश के झंडे 
+
+#sources_data3_text 
+देश पृष्ठभूमि 
+
+#sources_data4_text 
+देश के नाम 
+
+#sources_data5_text 
+2 अक्षर देश कोड 
+
+#sources_data6_text 
+विकिपीडिया पब्लिक डोमेन केवल छवियों 
+
+#sources_data7_text 
+सार्वजनिक Google स्प्रेडशीट
+
+#sources_data8_text 
+Pixabay पब्लिक डोमेन केवल छवियों

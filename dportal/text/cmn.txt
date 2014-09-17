@@ -1,6 +1,9 @@
 #welcome_text
 欢迎光临d-portal.org
 
+#publishers_welcome_text
+欢迎光临d-portal.org : 发行版
+
 #alert1_text
 d-portal.org还处于非常早期的开发，定于四月中旬Alpha版本。感谢您的耐心等待！很抱歉任何反馈
 
@@ -12,6 +15,9 @@ d-portal.org还处于非常早期的开发，定于四月中旬Alpha版本。感
 
 #tagline_text
 帮助您了解开发数据。
+
+#publishers_tagline_text
+发行版
 
 #install_button_text
 发行人
@@ -57,6 +63,9 @@ d-portal.org还处于非常早期的开发，定于四月中旬Alpha版本。感
 
 #read_more_text 
 了解更多关于d-portal
+
+#publisher_portal_text 
+发行版
 
 #links_title_text 
 相关链接
@@ -125,7 +134,7 @@ d-portal.org是跟踪资源流动的国家为基础的信息平台。
 是一个开源的平台。
 
 #about_paragraph7_text
-虽然它目前提供了一个通用的部署对于任何国家，它已经开发出被定制在国内，以满足当地需求的具体意图。有关如何，你可以针对某一特定国家创建一个定制的版本，请参阅我们的安装页面<i>（即将提供）</i>的进一步信息。
+虽然它目前提供了一个通用的部署对于任何国家，它已经开发出了被定制在国内，以满足当地需求的具体意图。有关如何可以针对某一特定国家创建一个自定义版本的更多信息，请参阅<a href="#install" class="how">如何安装</a>。
 
 #about_paragraph8_text
 资金
@@ -217,6 +226,15 @@ CSV文件的回报（默认名称为q.csv）
 #install_paragraph4_text 
 由于HTML, CSS, JavaScript的是网络的技术，被广泛使用和理解，我们相信这是一个很好的选择，容易采纳别人，易于部署和易于重新配置/定制 
 
+#install_title2_text 
+如何创建一个d-portal部件 
+
+#install_paragraph5_text 
+通过使用内部框架中，d-portal生成器允许你嵌入d-portal在任何支持HTML的发布平台段; IE浏览器。 WordPress的博客文章，QQ空间后，网站等等。 
+
+#install_paragraph6_text 
+访问<a href="http://d-portal.org/ctrack.html#view=generator" class="country_portal">http://d-portal.org/ctrack.html#view=generator</a>创建一个d-portal部件。
+
 #github_tip_text
 访问Github上的d-portal.org
 
@@ -225,6 +243,9 @@ CSV文件的回报（默认名称为q.csv）
 
 #github_info2_text
 d-portal.org目前正在开发和设计这样的事情是不断变化的。向我们发送您的建议，bug报告和议题或接触<a href="mailto:queries@d-portal.org" target="_blank" class="git small"> queries@d-portal.org</a>
+
+#github_info3_text
+如果你想保持最新与d-portal消息，请订阅<a href="https://groups.google.com/forum/?hl=en-GB#!members/d-portal-list" class="git small">谷歌论坛</a>。
 
 #footer_pick_text 
 选择其他国家 
@@ -273,3 +294,45 @@ Dash是不是特定国家的，因此您将能看到所有的在所有国家提�
 
 #dash_paragraph4_text 
 Dash是目前在访问<a href="http://d-portal.org/ctrack.html?#view=dash" class="dash_link">http://d-portal.org/ctrack.html?#view=dash</a>Dash是一项新功能，并仍处于开发阶段。
+
+#publisher_title_text
+探索发行
+
+#publisher_paragraph1_text
+下面挑一个出版商，探讨他们的数据。
+
+#sources_title_text 
+署名并链接到数据源 
+
+#sources_header1_text 
+数据 
+
+#sources_header2_text 
+源名称 
+
+#sources_header3_text 
+来源网址 
+
+#sources_data1_text 
+货币 
+
+#sources_data2_text 
+国家的国旗 
+
+#sources_data3_text 
+国家背景 
+
+#sources_data4_text 
+国名 
+
+#sources_data5_text 
+2字母的国家代码 
+
+#sources_data6_text 
+维基百科只有公共领域的图片 
+
+#sources_data7_text 
+公共谷歌电子表格
+
+#sources_data8_text 
+Pixabay公共领域中的映像

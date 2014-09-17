@@ -22,7 +22,7 @@ var http_gethead=function(url,cb)
 
 var http_getbody=function(url,cb)
 {
-	request({uri:url,timeout:20000,encoding:'utf8'}, function (error, response, body) {
+	request({uri:url,timeout:20000,encoding:null}, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 		cb(null,body);
 	  }
@@ -70,15 +70,19 @@ dstore_cache.cmd = function(argv){
 
 dstore_cache.import_xmlfile = function(xmlfile){
 
-	var xmlfilename=path.basename(xmlfile,".xml");
-	
-	var data=fs.readFileSync(xmlfile,"UCS-2"); // try 16bit first?
-	var aa=data.split(/<iati-activity/gi);
-	if(aa.length==1) // nothing found so try utf8
-	{
-		data=fs.readFileSync(xmlfile,"utf8");
-		aa=data.split(/<iati-activity/gi);
+var charset="unknown";
+var	bufferToString=function(buffer) {
+		if(!buffer) { return ""; }
+		var jschardet = require("jschardet")
+		var iconv = require("iconv-lite")
+		charset = jschardet.detect(buffer).encoding || "utf-8";
+		return iconv.decode(buffer,charset.toLowerCase());
 	}
+
+
+	var xmlfilename=path.basename(xmlfile,".xml");
+	var data=bufferToString( fs.readFileSync(xmlfile) ); // guess file format
+	var aa=data.split(/<iati-activity/gi);
 	
 	var acts=[];
 	for(var i=1;i<aa.length;i++)
@@ -89,7 +93,7 @@ dstore_cache.import_xmlfile = function(xmlfile){
 	}
 
 
-	console.log("\t\tImporting xmlfile : ("+acts.length+") \t"+xmlfilename);
+	console.log("\t\tImporting xmlfile <"+charset+">: ("+acts.length+") \t"+xmlfilename);
 //	wait.for(function(cb){
 		require("./dstore_db").fill_acts(acts,xmlfilename);
 //		} );
@@ -159,6 +163,8 @@ dstore_cache.empty = function(argv,keep){
 
 
 dstore_cache.iati = function(argv){
+	
+	var just_this_slug=argv._[2] || undefined; // just download this slug (filename without .xml)
 
 	try { fs.mkdirSync(global.argv.cache); } catch(e){}
 
@@ -171,7 +177,7 @@ dstore_cache.iati = function(argv){
 	{	
 		var js=wait.for(http_getbody,"http://iatiregistry.org/api/3/action/package_search?rows=1000&start="+start);
 
-		var j=JSON.parse(js);
+		var j=JSON.parse(js.toString('utf8'));
 		var rs=j.result.results;
 		done=true;
 		for(var i=0;i<rs.length;i++)
@@ -191,53 +197,56 @@ dstore_cache.iati = function(argv){
 					var fname=global.argv.cache+"/"+slug+".xml";
 					var fname_old=global.argv.cache+"/old/"+slug+".xml";
 					
-					slugs[slug]=url;
-					
-					try{
-						console.log((i+start+1)+"/"+(start+rs.length)+":downloading "+slug+" from "+url)
-						var download=true;
+					if( (!just_this_slug) || (just_this_slug==slug) ) // maybe limit to one slug
+					{
+						slugs[slug]=url;
+						
 						try{
-							var h=wait.for(http_gethead,url);
-							var f; try{ f=fs.statSync(fname); }catch(e){}
-	//						console.log(h.headers);
-	//						console.log(f);
-							if( h && h.headers["last-modified"] && f && f.mtime )
-							{
-								var hm=Date.parse( h.headers["last-modified"] );
-								var fm=Date.parse( f.mtime );
-								if(hm<=fm) // we already have a newer file
+							console.log((i+start+1)+"/"+(start+rs.length)+":downloading "+slug+" from "+url)
+							var download=true;
+							try{
+								var h=wait.for(http_gethead,url);
+								var f; try{ f=fs.statSync(fname); }catch(e){}
+		//						console.log(h.headers);
+		//						console.log(f);
+								if( h && h.headers["last-modified"] && f && f.mtime )
 								{
-									download=false;
+									var hm=Date.parse( h.headers["last-modified"] );
+									var fm=Date.parse( f.mtime );
+									if(hm<=fm) // we already have a newer file
+									{
+										download=false;
+									}
 								}
-							}
-							if( h && h.headers["content-length"] )
-							{
-								var size=parseInt(h.headers["content-length"] ) ;
-								if( size > 1024*1024*512 ) // huge file, skip it
+								if( h && h.headers["content-length"] )
 								{
-									failed_slugs[slug]="ERROR! File is too big > 512meg so skipping download...";
-									console.log("ERROR! File is too big > 512meg so skipping download...");
-									download=false;
+									var size=parseInt(h.headers["content-length"] ) ;
+									if( size > 1024*1024*512 ) // huge file, skip it
+									{
+										failed_slugs[slug]="ERROR! File is too big > 512meg so skipping download...";
+										console.log("ERROR! File is too big > 512meg so skipping download...");
+										download=false;
+									}
 								}
-							}
-							
-						}catch(e){}
+								
+							}catch(e){}
 
-						if(download)
-						{
-							var b=wait.for(http_getbody,url);
-							fs.writeFileSync(fname,b);
-							console.log("written\t"+b.length+" bytes to "+fname);
+							if(download)
+							{
+								var b=wait.for(http_getbody,url);
+								fs.writeFileSync(fname,b);
+								console.log("written\t"+b.length+" bytes to "+fname);
+							}
+							else
+							{
+								console.log("...");
+							}
+						
+						}catch(e){
+							failed_slugs[slug]=e;
+							console.log("Something went wrong, using last downloaded version of "+slug);
+							console.log(e);
 						}
-						else
-						{
-							console.log("...");
-						}
-					
-					}catch(e){
-						failed_slugs[slug]=e;
-						console.log("Something went wrong, using last downloaded version of "+slug);
-						console.log(e);
 					}
 				}
 			}
@@ -245,13 +254,15 @@ dstore_cache.iati = function(argv){
 		
 		start+=1000;
 	}
+	
+	if(!just_this_slug)
+	{
+		console.log("");
+		console.log("EMPTYING OLD CACHE");
+		console.log("");
 
-	console.log("");
-	console.log("EMPTYING OLD CACHE");
-	console.log("");
-
-	dstore_cache.empty({},slugs);
-
+		dstore_cache.empty({},slugs);
+	}
 
 	var failed_header=true;
 	for(var n in failed_slugs)

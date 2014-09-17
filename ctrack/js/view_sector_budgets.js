@@ -33,14 +33,15 @@ view_sector_budgets.view=function()
 	var sector=ctrack.hash.sector_group || "111";
 	
 	var args={};
+	args.zerodata="{alert_no_data3}";
 	
 	args.plate="{sector_budgets_data}";
 	args.chunk="sector_budgets_datas";
 	
 	args.q={
 		"year":year,
-		"sector_group":sector,
-		"from":"act,country,sector,budget",
+//		"sector_group":sector,
+//		"from":"act,country,sector,budget",
 	};
 	args.q["budget_day_end_gteq"]=year+"-01-01";
 	args.q["budget_day_end_lt"]=(parseInt(year)+1)+"-01-01";

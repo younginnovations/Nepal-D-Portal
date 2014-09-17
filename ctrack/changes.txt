@@ -1,3 +1,201 @@
+Development Portal (2014-09-10 shi)
+==============================
+Changes from Github issues
+Reworded instructions and options
+Fixed sorting for VIEW options
+Fixed width of widgets in preview
+
+
+Development Portal (2014-09-09 shi)
+==============================
+Add "FIX SIZE" as last step in widget
+Omit "FIX SIZE" with new update
+Added more instructions to widget
+Added screenshots to widget
+
+
+Development Portal (2014-09-04 shi)
+==============================
+Firefox fix widget height
+New widget options css fix
+Added footer of explanations for widget
+Fixed SAVi high visibility mode width
+Fixed frameborder="0" for iframe
+
+
+Publisher Portal (2014-08-28 shi)
+==============================
+Sector graphs height
+
+
+Development Portal (2014-08-28 shi)
+==============================
+Style generator page
+Delete unused template styles
+
+
+Development Portal (2014-08-21 shi)
+==============================
+Widget system
+SAVi documentation
+Customisation documentation
+Generator documentation
+Translation documentation
+Fixed paddings and widths for titles and activities list table
+Updated README.md
+
+
+Development Portal (2014-08-20 shi)
+==============================
+Savi tables fix for larger numbers
+Fixed image brightness for map icon
+Inspire colourtheme
+Edit Mustard colourtheme
+Fixed bottom margin in map page
+
+
+Development Portal (2014-08-19 shi)
+==============================
+Original icons for themeing
+Fixed images opacity filters
+Fixed original.css
+Fixed padding for donor/sector activities
+Fixed padding for table titles
+Fixed High Vis CSS bug
+Fixed line-height in tables for better legibility
+Fixed image brightness for SAVi
+
+
+Development Portal (2014-08-18 shi)
+==============================
+Tint mode for themeing
+Mustard colourtheme
+Fixed original.css
+
+
+Development Portal (2014-08-13 shi)
+==============================
+Fixed High Visibility slug link to registry dataset
+Fixed {missing_data} to include description
+Added translations
+
+
+Publisher Portal (2014-08-13 shi)
+==============================
+Added descriptive header titles to include Country and Sector count
+
+
+Publisher Portal (2014-08-12 shi)
+==============================
+Added views for country activities, transactions and budgets
+Added translations
+Fixed header titles for new views
+
+
+Development Portal (2014-08-12 shi)
+==============================
+Refactor CSS for themeing
+New template CSS for themeing
+Refactor SAVi CSS
+
+
+Development Portal (2014-08-11 shi)
+==============================
+Added new explanations for "0" and "-"
+Translations added
+Removed javascript links to footers
+Added link to Publisher Portal on index page
+
+
+Publisher Portal (2014-08-11 shi)
+==============================
+Added link back to Development Portal on index page
+Added translations
+
+
+Publisher Portal (2014-08-07 shi)
+==============================
+Added generic chunks for different portals
+Stats link "0" disabled
+Added new publisher views for sectors and countries
+Edit CSS for new tables
+Add translations for new views
+Fix javascript links
+Add new hover text for new views
+Fix graphs background and titles for new views
+Fixed stats table wrapper for larger numbers
+
+
+Publisher Portal (2014-08-06 shi)
+==============================
+Publisher portal individual view
+Add translations for publisher portal
+
+
+Development Portal (2014-08-06 shi)
+==============================
+Linked "0" and "-" to description footer
+Remove links in tables
+Adjust padding in table columns
+Adding onclicks to table rows for Sector / Donor
+Fix High flava tables
+Fix hover state for cursors
+Fix stats table on main page
+Rows are now links on main page table
+Friendly links added to Donor / Sector tables
+
+
+Dashboard (2014-08-05 shi)
+==============================
+Publisher links to publisher portals
+Update description for new links
+
+
+Development Portal (2014-08-02 shi)
+==============================
+Fixed padding for tables
+
+
+Development Portal (2014-07-25 shi)
+==============================
+Fixed table padding for more figures
+Changed Donor subheader
+Added instruction to table
+Hover titles for CRS and Sector / Donor titles
+Added chunk names for CRS as data input
+Changed class names for CRS as generic data input
+Added new top level sorting of Sector / Donor tables
+Fixed cursor for new top level upon hover
+
+
+Development Portal (2014-07-24 shi)
+==============================
+Fixed padding sizes for tables
+Fixed translations for Donor titles in tables
+Changed Donor subtitle for tables to be more descriptive
+Added sorting of columns for tables
+Changed "View All" links to "Back to Donor / Sector list"
+Fixed translations accordingly
+Fixed hover states for donor/sector tables including translations
+Fixed missing hover state for sector title in table
+Fixed hover titles for CRS to reflect footer
+Added description when "data is missing" for table links
+Added CSV download link for tables
+Added translations for new CSV download link
+Fixed hover state for bar graphs in donor/sector activities
+Added description under CRS to explain "-" in donor table
+
+
+Development Portal (2014-07-23 shi)
+==============================
+New CSS for template system
+Text CSS for Index page (countries name list)
+Added IATI Registry link to SAVi
+Changed CRS description from countries to donors
+Added more descriptions for tables
+Fixed pointer styles for tables
+
+
 Development Portal (2014-07-08 shi)
 ==============================
 Fixed bug view_sectors header

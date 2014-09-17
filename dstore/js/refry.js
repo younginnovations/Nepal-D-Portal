@@ -7,6 +7,10 @@ var util=require('util');
 
 var htmlparser=require('htmlparser');
 
+var entities = require("entities");
+
+
+
 var ls=function(a) { console.log(util.inspect(a,{depth:null})); }
 
 
@@ -53,6 +57,15 @@ refry.xml=function(data)
 			if(v.type=="text")
 			{
 				var e=kids.push(v.data); // push a string
+			}
+			else
+			if(v.type=="directive")
+			{
+				if( v.data.slice(0,8) == "![CDATA[" )
+				{
+					var s=v.data.slice(8,-2);
+					var e=kids.push(entities.encodeXML(s)); // push a string that used to be cdata so needs escaping
+				}
 			}
 		}
 	}
@@ -150,7 +163,7 @@ refry.tagval=function(json,name)
 	var t=refry.tag(json,name); // find
 	if( t && t[1] && t[1][0] && ( "string" == typeof t[1][0] ) ) // check
 	{
-		return t[1][0];
+		return entities.decodeXML(t[1][0]);
 	}
 }
 
@@ -160,7 +173,7 @@ refry.tagval_trim=function(json,name)
 	var t=refry.tag(json,name); // find
 	if( t && t[1] && t[1][0] && ( "string" == typeof t[1][0] ) ) // check
 	{
-		return t[1][0].trim();
+		return entities.decodeXML(t[1][0].trim());
 	}
 }
 
@@ -210,4 +223,38 @@ refry.tags=function(json,name,cb)
 	};
 	if(json.forEach) { json.forEach(f); }
 	else { f(json); }
+}
+
+
+// return the enclosed value string of the first tag we find of the given name
+// but *prefer* english if it is an option so multiple tags will be consdered
+refry.tagval_en=function(json,name)
+{
+	var ret;
+	var ret_en;
+	
+	if(!json){ return; }
+	var f; f=function(it)
+	{
+		if(typeof it == "object")
+		{
+			if(it[0]==name) {
+				var l=it["xml:lang"]; if(l) { l=l.toLowerCase(); }
+				if((!ret_en)&&(l=="en")) { ret=it; ret_en=it } // the first english tag we found
+				else if(!ret) { ret=it; } // the first tag we found
+			}
+			if(!ret) // only recurse if not found anything at this level yet
+			{
+				if(it[1]) { it[1].forEach(f); }
+			}
+		}
+	};	
+	if(json.forEach) { json.forEach(f); }
+	else { f(json); }
+	
+	var t=ret;
+	if( t && t[1] && t[1][0] && ( "string" == typeof t[1][0] ) ) // check
+	{
+		return entities.decodeXML(t[1][0]);
+	}
 }

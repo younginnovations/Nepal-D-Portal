@@ -24,6 +24,7 @@ views.stats=require("./view_stats.js");
 views.map=require("./view_map.js");
 
 views.main=require("./view_main.js");
+views.publisher=require("./view_publisher.js");
 views.donors_comparison=require("./view_donors_comparison.js");
 
 views.donors_top=require("./view_donors_top.js");
@@ -54,4 +55,11 @@ views.list_transactions=require("./view_list_transactions.js");
 views.list_budgets=require("./view_list_budgets.js");
 views.list_publishers=require("./view_list_publishers.js");
 
+views.publisher_countries=require("./view_publisher_countries.js");
+views.publisher_countries_top=require("./view_publisher_countries_top.js");
 
+views.publisher_sectors=require("./view_publisher_sectors.js");
+views.publisher_sectors_top=require("./view_publisher_sectors_top.js");
+
+views.frame=require("./view_frame.js");
+views.generator=require("./view_generator.js");
