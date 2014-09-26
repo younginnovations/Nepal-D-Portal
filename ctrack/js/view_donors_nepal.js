@@ -72,6 +72,7 @@ view_donors_nepal.ajax=function(args)
 			}
 
 			v.donor=iati_codes.funder_names[v.funder] || iati_codes.publisher_names[v.funder] || iati_codes.country[v.funder] || v.funder;
+			console.log(v);
 			s.push( plate.replace(args.plate || "{table_donors_nepal_row}",v) );
 		});
 		ctrack.chunk(args.chunk || "table_donors_nepal_rows",s.join(""));
@@ -104,7 +105,8 @@ view_donors_nepal.ajax=function(args)
 	}
 
    	var amp=amp_2012_commitment[ (args.country || ctrack.args.country).toUpperCase() ];
-    for(var n in amp)
+   	var amp = amp['2012'];
+   	for(var n in amp)
 	{
 		var d={};
 		d.funder=n;

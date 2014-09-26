@@ -26,12 +26,14 @@ views.map=require("./view_map.js");
 views.main=require("./view_main.js");
 views.publisher=require("./view_publisher.js");
 views.donors_comparison=require("./view_donors_comparison.js");
+views.donors_activities_graph=require("./view_donors_activities_graph.js");
 
 views.donors_top=require("./view_donors_top.js");
 views.donors=require("./view_donors.js");
 views.donor_transactions=require("./view_donor_transactions.js");
 views.donor_budgets=require("./view_donor_budgets.js");
 views.donor_activities=require("./view_donor_activities.js");
+views.donor_activities_nepal = require("./view_donors_activities_nepal.js");
 views.donors_nepal=require("./view_donors_nepal.js");
 
 views.sectors_top=require("./view_sectors_top.js");
@@ -39,6 +41,8 @@ views.sectors=require("./view_sectors.js");
 views.sector_transactions=require("./view_sector_transactions.js");
 views.sector_budgets=require("./view_sector_budgets.js");
 views.sector_activities=require("./view_sector_activities.js");
+views.sector_activities_nepal=require("./view_sector_activities_nepal.js");
+views.sector_activities_graph=require("./view_sector_activities_graph.js");
 
 views.districts=require("./view_districts.js");
 

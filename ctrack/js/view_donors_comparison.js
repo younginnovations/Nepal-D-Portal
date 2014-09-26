@@ -1,4 +1,3 @@
-
 var view_donors_comparsison=exports;
 exports.name="stats";
 
@@ -38,9 +37,9 @@ view_donors_comparsison.ajax = function(args)
 	{
 		var content = '';
 		content += "$('"+selector+"').highcharts({";
-        content += "chart: {type: 'column', height: 400, marginBottom: 60}, title: { text: '"+title+"'},";
+        content += "chart: {type: 'column', height: 400, marginBottom: 110}, title: { text: '"+title+"'},";
        	content += "xAxis: {categories: ["+cat+"]},";
-        content += "yAxis: {min: 0, max: 250000000, title: {text: 'Amount ($)'}},";
+        content += "yAxis: {min: 0, title: {text: 'Amount ($)'}},";
         content += "plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},";
         content += "series: [{showInLegend: false, name: 'Fund',data: [" + data + "]}]";
 		content += "});";
@@ -136,6 +135,7 @@ view_donors_comparsison.ajax = function(args)
 
 	var list_amp = [];
 	var amp=amp_2012_commitment[ (args.country || ctrack.args.country).toUpperCase() ];
+	var amp = amp['2012'];
 	for(var n in amp)
 	{
 		var d={};

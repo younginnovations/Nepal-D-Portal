@@ -1,0 +1,61 @@
+#view_donors_activities_graph
+{view_head}
+<style>{css}</style>
+{beige}
+{main_head}
+{main_countrymin}
+{donors_comparison_graph_nepal}
+{sectors_data_description}
+{main_datainvestigators}
+{view_tail}
+
+
+#donors_comparison_graph_nepal
+<style>.graph_five_block{float:left; width:313px;} /* Top 5 donor graphs
+   ============================================= */
+.donor_top_wrap {
+    clear: both;
+    margin: 40px auto 20px;
+    width: 960px;
+}
+
+.clear {
+	clear: both;
+}
+
+.highcharts-container {
+    box-shadow: 4px 4px 10px #333;   
+}
+
+.highcharts-container rect {
+    fill:#eee !important;
+    opacity: .9;
+}
+
+.highcharts-container .highcharts-series-group rect {
+    fill: #1269B3 !important;
+    stroke:#fff;
+    stroke-width:1px;
+    stroke-opacity:.7;
+    opacity: .9;
+}
+
+.highcharts-legend-item rect {
+    fill: #1269B3 !important;
+}
+
+.highcharts-axis path {
+    stroke: #888 !important;
+}
+
+.highcharts-container text {
+    text-shadow: 1px 1px 0 #eee;
+}
+</style>
+<div class="donor_top_wrap">
+	<div class="donor_iati_five graph_five_block"></div>
+	<div class="donor_crs_five graph_five_block" style="margin: 0 10px;"></div>
+	<div class="donor_amp_five graph_five_block"></div>
+	<div class="clear"></div>
+</div>
+{donor_graph}
