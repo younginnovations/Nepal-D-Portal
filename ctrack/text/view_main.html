@@ -11,8 +11,8 @@
 {beige}
 {main_head}
 {main_max}
-{donors_comparison_graph}
 {about_data_links}
+{donor_graph_top_five}
 {donor_graph}
 {sector_graph}
 {main_map}
@@ -266,6 +266,14 @@
     <th class="titles">{date_end_tip_text}</th>
 </tr>
 
+#donor_graph_top_five
+<div class="description">
+	{iati_graph_top_five_value}
+	{crs_graph_top_five_value}
+	{amp_graph_top_five_value}
+</div>
+
+
 #donor_graph
 <div class="default">
 <a href="#view=donors_nepal" class="ask donor">{title_donor_text}</a>
@@ -276,6 +284,7 @@
 <script>
 	var ctrack=require("ctrack");
 	var data=ctrack.get_chart_data("data_chart_donors");
+	console.log(data);
 	var opts={
 		layout:"right",
 		width:958,
