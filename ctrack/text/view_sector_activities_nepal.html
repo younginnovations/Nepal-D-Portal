@@ -9,7 +9,7 @@
 {main_min}
 {about_data_links}
 {sectors_head}
-{sector_activities_graph}
+{sectors_graph_wrap}
 <div class="title_wrap">
 	<table class="title">
 		<tr>
@@ -28,11 +28,11 @@
 		<a href="#view=sectors" class="button">{list_sector_back_text}</a>
 	</div>
 </div>
-{sector_activities_data_description}
+{sector_activities_data_description_nepal}
 {main_datainvestigators}
 {view_tail}
 
-#sector_activities_data_description
+#sector_activities_data_description_nepal
 <div class="description_wrap">
 	<div class="description">
 		<span class="title">{sector_activities_data_description_title_text}</span>
@@ -41,7 +41,7 @@
 	</div>
 </div>
 
-#sector_activities_data
+#sector_activities_data_nepal
 <tr onclick="return ctrack.url('#view=act&aid={aid}');">
 	<td class="num">{num}.</td>
 	<td class="title" title="{project_title_tip_text}">
@@ -61,3 +61,17 @@
 		</div>
 	</td>
 </tr>
+
+#sectors_graph_wrap
+<div class="title_wrap">
+	<table class="title">
+		<tr>
+			<td class="icon"><img src="{flava}activity_icon.png" alt="{activity_icon_alt_text}" width="40" height="40"/></td>
+			<td>Graph of Sector Budget of different Data Sources by Year</td>
+		</tr>
+	</table>
+	<div class="table_wrap">
+		{sectors_data_graph}
+		{sector_budget_graph}
+	</div>
+</div>
