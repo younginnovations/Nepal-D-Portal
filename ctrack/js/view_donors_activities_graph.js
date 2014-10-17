@@ -13,7 +13,7 @@ var amp_2012_commitment =require("../../dstore/json/amp_2012_commitment.json")
 
 
 view_donors_comparsison.chunks=[
-	"donor_graph",
+	"donors_data_graph"
 ];
 
 view_donors_comparsison.view=function(args)
@@ -26,7 +26,6 @@ view_donors_comparsison.view=function(args)
 	args.q={
 		"funder_ref":funder,
 	};
-	view_donors_comparsison.ajax(args);
 };
 
 view_donors_comparsison.ajax = function(args)
@@ -35,108 +34,62 @@ view_donors_comparsison.ajax = function(args)
 	var donor = args.q.funder_ref;
 	var donor_name = iati_codes['funder_names'][donor] || iati_codes['country'][donor];
 
-	ctrack.donor_graph={
-		'iati': {'year':[], 'amount': []},
-		'crs': {'year':[], 'amount': []},
-		'amp': {'year':[], 'amount': []}
+	var donor_year_list = [];//for jqBarGraph
+	var donor_data_new ={
+		'crs':{},
+		'iati':{},
+		'amp':{},
 	};
-	iati_list = [];
-	var getBarChart = function(selector, cat, data, title)
+
+	var jqgetBarChart = function(data)
 	{
-		var content = '';
-		content += "$('"+selector+"').highcharts({";
-        content += "chart: {type: 'column', height: 400, marginBottom: 60}, title: { text: '"+title+"'},";
-       	content += "xAxis: {categories: ["+cat+"]},";
-        content += "yAxis: {min: 0, title: {text: 'Amount ($)'}},";
-        content += "plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},";
-        content += "series: [{showInLegend: false, name: 'Fund',data: [" + data + "]}]";
-		content += "});";
+		var content = "<div id='donor_comparision_graph'";
+		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 170px;'>";
+		content += "<script>$('#donor_comparision_graph').jqBarGraph({";
+		content += "data:"+data+",";
+		content += "colors: ['#242424','#437346','#97D95C'],";
+		content += "type: 'multi',";
+		content += "legends: ['CRS','AMP','IATI'],legend: true,";
+		//content += "animate:false,";
+		content += "prefix:'USD '});";
+		content += "</script></div>";
 
 		return content;
 	}
 
-	var getArrayToString = function(data)
-	{
-		var result = '';
-		for (var i=0; i<data.length; i++){
-		    result += "'"+ data[i] + "'";
-		    if(data.length > 1 && i<data.length-1){
-		        result += ",";
-		    }
-		}
-
-		return result;
-	}
-
 	var display=function()
 	{
-		ctrack.donor_graph.iati.year=[];
-		ctrack.donor_graph.iati.amount=[];
-
-		iati_list.sort(function(a,b){
-			return ( (a.year||0)-(b.year||0) );
+		var unique_donor_year_list = [];
+		$.each(donor_year_list, function(i, el){
+		    if($.inArray(el, unique_donor_year_list) === -1) unique_donor_year_list.push(el);
 		});
+		sorted_donor_array = unique_donor_year_list.sort();
 
-		iati_list.forEach(function(donor_year){
-			var v={};
-			v.year = donor_year.year;
-			v.amount = donor_year.amount;
-			v.data_type = 'iati';
-			fadd(v);
-		})
+		var	donor_array = [];
+		
+		sorted_donor_array.forEach(function(year){
+			var crs_value = (year in donor_data_new.crs)?donor_data_new.crs[year]:0;
+			var amp_value = (year in donor_data_new.amp)?donor_data_new.amp[year]:0;
+			var iati_value = (year in donor_data_new.iati)?donor_data_new.iati[year]:0;
+			donor_array.push([[crs_value,amp_value,iati_value],year]);
+		});
+		
+		var graph_content = jqgetBarChart(JSON.stringify(donor_array));
 
-  		var content = '<script type="text/javascript">';
-		content += "$(function () {";
+		ctrack.chunk("donors_data_graph", graph_content);
 
-		var iati_year = getArrayToString(ctrack.donor_graph.iati.year);
-		var crs_year = getArrayToString(ctrack.donor_graph.crs.year);
-		var amp_year = getArrayToString(ctrack.donor_graph.amp.year);
-
-		content += getBarChart('.donor_iati_five', iati_year, ctrack.donor_graph.iati.amount.toString(), 'According to IATI, The Amount Donated by ' + donor_name + ' in Years');
-		content += getBarChart('.donor_crs_five', crs_year, ctrack.donor_graph.crs.amount.toString(), 'According to CRS, The Amount Donated by ' + donor_name + ' in Years');
-		content += getBarChart('.donor_amp_five', amp_year, ctrack.donor_graph.amp.amount.toString(), 'According to AMP, The Amount Donated by ' + donor_name + ' in Years');
-
-		content += "});";
-		content += "</script>";
-
-		ctrack.chunk("donor_graph", content);
 		ctrack.display();
 	};
 
-	var fadd=function(d)
-	{
-		switch (d.data_type)
-		{
-			case "iati":
-				ctrack.donor_graph.iati.year.push(d.year);
-				ctrack.donor_graph.iati.amount.push(d.amount);
-				break;
-			case "crs":
-				ctrack.donor_graph.crs.year.push(d.year);
-				ctrack.donor_graph.crs.amount.push(d.amount);
-				break;
-			case "amp":
-				ctrack.donor_graph.amp.year.push(d.year);
-				ctrack.donor_graph.amp.amount.push(d.amount);
-				break;
-		}
-	}
-
-	//var donor = args.q.funder_ref;
 	var list_crs=[];
 // 	insert crs data if we have it
 	var crs=crs_year[ (args.country || ctrack.args.country).toUpperCase() ];
 	var d={};
 	d.year = 2012;
 	d.amount = crs[donor];
-	list_crs.push(d);
 
-	list_crs.forEach(function(donor_year){
-		var v=donor_year;
-		v.data_type = 'crs'
-		fadd(v);
-		
-	});
+	donor_year_list.push(d.year.toString());
+	donor_data_new.crs[d.year.toString()]=d.amount;
 
 	var amp=amp_2012_commitment[ (args.country || ctrack.args.country).toUpperCase() ];
 
@@ -144,13 +97,14 @@ view_donors_comparsison.ajax = function(args)
 		var v = {};
 		v.year = year;
 		v.amount = amp[year][donor];
-		v.data_type = 'amp';
-		fadd(v); 
+		donor_data_new.amp[v.year]=v.amount;
+		donor_year_list.push(year);
 	}
 	
 	var years=[2012,2013,2014];
 	years.forEach(function(year)
 	{
+		donor_year_list.push(year.toString());
 		var dat={
 				"from":"act,trans,country",
 				"limit":args.limit || 5,
@@ -166,8 +120,9 @@ view_donors_comparsison.ajax = function(args)
 		var callback=function(data){
 			var d = {};
 			d.year = year;
-			d.amount = data['rows'][0]['sum_of_percent_of_trans_usd'];
-			iati_list.push(d);
+			d.amount = parseInt(data['rows'][0]['sum_of_percent_of_trans_usd']);
+			donor_data_new.iati[d.year]=d.amount;
+
 			
 			display();
 				
