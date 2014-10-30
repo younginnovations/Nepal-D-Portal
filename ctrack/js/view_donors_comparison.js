@@ -33,16 +33,14 @@ view_donors_comparsison.ajax = function(args)
 		'amp': {'funder':[], 'sum_of_percent_of_usd': []}
 	};
 
-	var getSimpleBarChart = function(data,donor,color)
+	var getSimpleBarChart = function(data,donor,color,max_value)
 	{
-		console.log(data);
-		console.log(donor);
 		var content = "<div id='donor_comparision_graph_"+donor+"' width='100px;'";
 		content += "style='background-color:#F5F5F5; margin:50px 0px 0px 170px;'>";
 		content += "<script>$('#donor_comparision_graph_"+donor+"').jqbargraph({";
 		content += "data:"+data+",";
 		//content += "colors: ['#242424','#437346','#97D95C'],";
-		content += "colors:['"+color+"'],legends: ['"+donor+"'] , legend: true,";
+		content += "colors:['"+color+"'],legends: ['"+donor+"'] , legend: true,maxValue:"+max_value+",";
 		//content += "animate:false,";
 		content += "prefix:'USD '});";
 		content += "</script></div>";
@@ -52,10 +50,11 @@ view_donors_comparsison.ajax = function(args)
 
 	var display=function()
 	{
-
-		var iati_top5_array_content = getSimpleBarChart(JSON.stringify(iati_top5_array),"IATI","#00c475");
-		var crs_top5_array_content = getSimpleBarChart(JSON.stringify(crs_top5_array),"CRS","#5B6572");
-		var amp_top5_array_content = getSimpleBarChart(JSON.stringify(amp_top5_array),"AMP","#008fff");
+		var max_value = Math.max(iati_top5_array[0][0],crs_top5_array[0][0],amp_top5_array[0][0]);
+		
+		var iati_top5_array_content = getSimpleBarChart(JSON.stringify(iati_top5_array),"IATI","#00c475",max_value);
+		var crs_top5_array_content = getSimpleBarChart(JSON.stringify(crs_top5_array),"CRS","#5B6572",max_value);
+		var amp_top5_array_content = getSimpleBarChart(JSON.stringify(amp_top5_array),"AMP","#008fff",max_value);
 		
 		ctrack.chunk("iati_graph_top_five_value", iati_top5_array_content);
 		ctrack.chunk("crs_graph_top_five_value", crs_top5_array_content);

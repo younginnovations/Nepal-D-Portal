@@ -113,7 +113,7 @@
 		var leg = new Array(); //legends array
 		
 		//max value in data, I use this to calculate height of bar
-		max = max(data);
+		max = arr.maxValue ? arr.maxValue : max(data);
 		colPosition = 0; // for printing colors on simple bar graph
 
  		for(var val in data){
@@ -277,7 +277,8 @@
 		type: false, // or 'multi'
 		showValues: true,
 		showValuesColor: '#fff',
-		title: false
+		title: false,
+		maxValue: 0,
 	};
 	
 	
