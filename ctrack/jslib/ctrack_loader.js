@@ -22,6 +22,7 @@ ctrack_loader=function(args){
 		root+"jslib/chosen.jquery.min.js",
 		root+"jslib/ctrack.min.js",
 		root+"jslib/jqBarGraph.js",
+        root+"jslib/script.js",
 //		root+"jslib/ctrack.js",
 	function(){
 		

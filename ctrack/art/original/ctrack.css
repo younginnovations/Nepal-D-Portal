@@ -153,7 +153,7 @@ a.stats_link.missing span	{color:#008FFF;}
 /*	Data Description styles
 	============================================= */
 .description_wrap		{width:100%; margin:0 auto; background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 60%,rgba(0,0,0,1) 100%); background:-prefix-linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 50%,rgba(0,0,0,1) 100%); padding-bottom:40px;}
-.description			{width:880px; margin:0 auto; padding:40px; text-align:left; margin-bottom:40px; background-color:rgba(255, 255, 255, 0.1);}
+.description			{width:960px; margin:40px auto 20px; padding:0; text-align:left; margin-bottom:40px; background:transparent; overflow: hidden; }
 .description span.title	{display:block; color:#FFF; line-height:1.35em; font-size:1.4em; margin-top:20px; padding:10px 0; border-top:1px solid #FFF; border-bottom:1px solid #FFF;}
 .description span.title.sub	{font-size:1.0em; border:0; margin:0; padding-bottom:10px; font-weight:bold;}
 .description p			{padding:15px 0; font-size:1.0em; color:#FFF; line-height:1.4em;}
@@ -403,3 +403,93 @@ a.beige:hover			{color:#FFF;}
 @-moz-keyframes spin {from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(359deg);}}
 @-o-keyframes spin {from {-o-transform: rotate(0deg);} to {-o-transform: rotate(359deg);}}
 @keyframes spin {from {transform: rotate(0deg);} to {transform: rotate(359deg);}}
+
+
+.comparison-graph {
+	margin-left: 10px!important;
+	float: left;
+	-webkit-box-shadow: 4px 4px 10px #333;
+	-moz-box-shadow: 4px 4px 10px #333;
+	box-shadow: 4px 4px 10px #333;
+	background: rgba(238,238,238,0.9)!important;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding-top: 24px;
+/*
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+*/
+}
+
+.comparison-graph h3 {
+	margin-top: -10px;
+	color: #274b6d;
+	text-shadow: 1px 1px 0 #eee;
+}
+
+.comparison-graph:first-child {
+	margin-left: 0!important;
+} 
+
+.comparison-graph {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666;
+	cursor: default;
+	color: #666;
+}
+
+.graphFielddonor_comparision_graph_IATI:nth-child(7) .graphValuedonor_comparision_graph_IATI,.graphFielddonor_comparision_graph_CRS:nth-child(7) .graphValuedonor_comparision_graph_CRS,.graphFielddonor_comparision_graph_AMP:nth-child(7) .graphValuedonor_comparision_graph_AMP {
+	margin-left: -50px;
+}
+
+.graphLabeldonor_comparision_graph_IATI,.graphLabeldonor_comparision_graph_CRS,.graphLabeldonor_comparision_graph_AMP {
+	height: 50px;
+	text-shadow: 1px 1px 0 #eee;
+	margin-top: 2px;
+}
+
+.graphBardonor_comparision_graph_IATI,.graphBardonor_comparision_graph_CRS,.graphBardonor_comparision_graph_AMP,
+.subBarssector_comparision_graph,.graphBarsector_budget_graph {
+	width: 30px;
+	margin: 0 auto;
+	opacity: 0.9;
+/*
+	background: repeating-linear-gradient(
+		45deg,
+		#606dbc,
+		#606dbc 10px,
+		#465298 10px,
+		#465298 20px
+	)!important;
+*/
+}
+
+.graphBardonor_comparision_graph_IATI,.graphBardonor_comparision_graph_CRS,.graphBardonor_comparision_graph_AMP {
+	background: #1269B1!important;
+}
+
+#legendHolder4donor_comparision_graph_IATI,#legendHolder4donor_comparision_graph_CRS,#legendHolder4donor_comparision_graph_AMP {
+	display: none;
+}
+
+.graphValuedonor_comparision_graph_IATI,.graphValuedonor_comparision_graph_CRS,.graphValuedonor_comparision_graph_AMP {
+	display: none;
+	background: rgba(255,255,255,0.8);
+	border-radius: 3px;
+	border: 1px solid #1269B1;
+	width: 90px;
+	padding: 4px;
+	margin-bottom: 4px;
+}
+
+.head_wrap+.title_wrap .table_wrap {
+	background: transparent;
+	margin-top: 40px;
+}
+
+#sector_comparision_graph,#sector_budget_graph {
+	width: 400px!important;
+}

@@ -42,7 +42,7 @@ view_sector_activities_graph.ajax = function(args)
 
 	var getBarChart = function(data)
 	{
-		var content = "<div id='sector_comparision_graph'";
+		var content = "<div id='sector_comparision_graph' class='comparison-graph'";
 		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 170px;'>";
 		content += "<script>$('#sector_comparision_graph').jqBarGraph({";
 		content += "data:"+data+",";
@@ -59,8 +59,8 @@ view_sector_activities_graph.ajax = function(args)
 	var getSimpleBarChart = function(data)
 	{
 		console.log(data);
-		var content = "<div id='sector_budget_graph'";
-		content += "style='background-color:#F5F5F5; margin:50px 0px 0px 170px;'>";
+		var content = "<div id='sector_budget_graph' class='comparison-graph'";
+		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 170px;'>";
 		content += "<script>$('#sector_budget_graph').jqbargraph({";
 		content += "data:"+data+",";
 		//content += "colors: ['#242424','#437346','#97D95C'],";
