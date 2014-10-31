@@ -108,7 +108,7 @@
 		postfix = arr.postfix;
 		space = arr.barSpace; //space between bars
 		legendWidth = arr.legend ? arr.legendWidth : 0; //width of legend box
-		fieldWidth = ($(el).width()-legendWidth)/data.length; //width of bar
+		fieldWidth = ($(el).width()-legendWidth)/data.length + 20; //width of bar
 		totalHeight =  $(el).height(); //total height of graph box
 		var leg = new Array(); //legends array
 		
@@ -160,7 +160,7 @@
  			$('#graphField'+unique).css({ 
  				'left': (fieldWidth)*val, 
  				'width': fieldWidth-space, 
- 				'margin-left': space});
+ 				'margin-left': space - 4 });
  	
  			// multi array
  			if(valueData instanceof Array){
@@ -260,8 +260,8 @@
 	// default values
 	$.fn.jqBarGraph.defaults = {	
 		barSpace: 10,
-		width: 600,
-		height: 400,
+		width: 313,
+		height: 450,
 		color: '#000000',
 		colors: false,
 		lbl: '',

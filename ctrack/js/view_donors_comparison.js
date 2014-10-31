@@ -37,8 +37,8 @@ view_donors_comparsison.ajax = function(args)
 	{
 		console.log(data);
 		console.log(donor);
-		var content = "<div id='donor_comparision_graph_"+donor+"' width='100px;'";
-		content += "style='background-color:#F5F5F5; margin:50px 0px 0px 170px;'>";
+		var content = "<div id='donor_comparision_graph_"+donor+"' class='comparison-graph'>";
+		content += "<h3>Top 5 Donor as per " + donor + " 2012 </h3>";
 		content += "<script>$('#donor_comparision_graph_"+donor+"').jqbargraph({";
 		content += "data:"+data+",";
 		//content += "colors: ['#242424','#437346','#97D95C'],";
