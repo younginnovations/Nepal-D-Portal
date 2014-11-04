@@ -23,5 +23,12 @@ $(document).ready(function(){
   }
  );
  
+ $( ".graphBarsector_budget_graph" ).hover(
+  function() {
+   $(this).siblings('.graphValuesector_budget_graph').css('display','block');
+  }, function() {
+   $(this).siblings('.graphValuesector_budget_graph').css('display','none');
+  }
+ );
 
 });

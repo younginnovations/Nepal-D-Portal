@@ -415,7 +415,7 @@ a.beige:hover			{color:#FFF;}
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	padding-top: 24px;
+	padding: 24px 10px 0;
 /*
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -441,21 +441,30 @@ a.beige:hover			{color:#FFF;}
 	color: #666;
 }
 
-.graphFielddonor_comparision_graph_IATI:nth-child(7) .graphValuedonor_comparision_graph_IATI,.graphFielddonor_comparision_graph_CRS:nth-child(7) .graphValuedonor_comparision_graph_CRS,.graphFielddonor_comparision_graph_AMP:nth-child(7) .graphValuedonor_comparision_graph_AMP {
-	margin-left: -50px;
+#donor_comparision_graph_IATI,#donor_comparision_graph_CRS,#donor_comparision_graph_AMP {
+	padding: 24px 0 0;
 }
 
-.graphLabeldonor_comparision_graph_IATI,.graphLabeldonor_comparision_graph_CRS,.graphLabeldonor_comparision_graph_AMP {
+.graphFielddonor_comparision_graph_IATI:nth-child(7) .graphValuedonor_comparision_graph_IATI,.graphFielddonor_comparision_graph_CRS:nth-child(7) .graphValuedonor_comparision_graph_CRS,.graphFielddonor_comparision_graph_AMP:nth-child(7) .graphValuedonor_comparision_graph_AMP {
+	margin-left: -58px;
+}
+
+.graphLabeldonor_comparision_graph_IATI,.graphLabeldonor_comparision_graph_CRS,.graphLabeldonor_comparision_graph_AMP,.graphLabelsector_comparision_graph,.graphLabelsector_budget_graph {
 	height: 50px;
 	text-shadow: 1px 1px 0 #eee;
 	margin-top: 2px;
+}
+
+.graphLabelsector_comparision_graph,.graphLabelsector_budget_graph,.graphLabeldonor_comparision_graph {
+	height: 25px;
+	margin-top: 5px;
 }
 
 .graphBardonor_comparision_graph_IATI,.graphBardonor_comparision_graph_CRS,.graphBardonor_comparision_graph_AMP,
 .subBarssector_comparision_graph,.graphBarsector_budget_graph {
 	width: 30px;
 	margin: 0 auto;
-	opacity: 0.9;
+/*	opacity: 0.9;*/
 /*
 	background: repeating-linear-gradient(
 		45deg,
@@ -468,7 +477,15 @@ a.beige:hover			{color:#FFF;}
 }
 
 .graphBardonor_comparision_graph_IATI,.graphBardonor_comparision_graph_CRS,.graphBardonor_comparision_graph_AMP {
+	background: #85C8FF!important;
+}
+
+.graphBardonor_comparision_graph_IATI {
 	background: #1269B1!important;
+}
+
+.graphBardonor_comparision_graph_CRS {
+	background: #2DA9F3!important;
 }
 
 #legendHolder4donor_comparision_graph_IATI,#legendHolder4donor_comparision_graph_CRS,#legendHolder4donor_comparision_graph_AMP {
@@ -483,13 +500,58 @@ a.beige:hover			{color:#FFF;}
 	width: 90px;
 	padding: 4px;
 	margin-bottom: 4px;
+	margin-left: 10px;
+}
+
+.subBarssector_comparision_graph div,.graphValuesector_budget_graph,.subBarsdonor_comparision_graph div {
+	background: rgba(255,255,255,0.8);
+	border-radius: 3px;
+	border: 1px solid #1269B1;
+	min-width: 90px;
+	padding: 4px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	display: none;
+}
+
+.subBarssector_comparision_graph div,.subBarsdonor_comparision_graph div {
+	z-index: 1;
+	position: relative;
+	min-width: 106px;
+	text-align: left;
+}
+
+.subBarssector_comparision_graph div,.subBarsdonor_comparision_graph div {
+	margin-left: 0;
+	margin-top: -26px;
+}
+
+.graphBarsector_comparision_graph {
+	overflow: initial!important;
+}
+
+.graphBarsector_budget_graph {
+	background: #85C8FF!important; 
 }
 
 .head_wrap+.title_wrap .table_wrap {
 	background: transparent;
 	margin-top: 40px;
+	padding: 0;
 }
 
 #sector_comparision_graph,#sector_budget_graph {
-	width: 400px!important;
+	width: 450px!important;
+}
+
+#sector_budget_graph {
+	float: right;
+}
+
+#donor_comparision_graph {
+	width: 100%!important;
+}
+
+.graphFieldsector_comparision_graph:nth-child(6) .subBarssector_comparision_graph div {
+	margin-left: -90px;
 }

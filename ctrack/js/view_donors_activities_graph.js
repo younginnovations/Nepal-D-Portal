@@ -43,13 +43,13 @@ view_donors_comparsison.ajax = function(args)
 
 	var jqgetBarChart = function(data)
 	{
-		var content = "<div id='donor_comparision_graph'";
-		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 170px;'>";
+		var content = "<div id='donor_comparision_graph' class='comparison-graph'";
+		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 0px;'>";
 		content += "<script>$('#donor_comparision_graph').jqBarGraph({";
 		content += "data:"+data+",";
-		content += "colors: ['#242424','#437346','#97D95C'],";
+		content += "colors: ['#1269B1','#2DA9F3','#85C8FF'],";
 		content += "type: 'multi',";
-		content += "legends: ['CRS','AMP','IATI'],legend: true,";
+		content += "legends: ['IATI','CRS','AMP'],legend: true,";
 		//content += "animate:false,";
 		content += "prefix:'USD '});";
 		content += "</script></div>";
