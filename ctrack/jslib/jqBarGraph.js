@@ -143,7 +143,7 @@
  			if (lbl == undefined) lbl = arr.lbl;
  		
  			out  = "<div class='graphField"+el.id+"' id='graphField"+unique+"' style='position: absolute'>";
- 			out += "<div class='graphValue"+el.id+"' id='graphValue"+unique+"'>"+prefix+value+postfix+"</div>";
+ 			out += "<div class='graphValue"+el.id+"' id='graphValue"+unique+"'>"+prefix+punctuatedNumber(value)+postfix+"</div>";
  			
  			out += "<div class='graphBar"+el.id+"' id='graphFieldBar"+unique+"' style='background-color:"+color+";position: relative; overflow: hidden;'></div>";
 
@@ -213,6 +213,40 @@
  			}
  			
  		}
+ 		//creating a vertical scale
+		//creating a number below max stuffed with zeros
+		var totalHeightBar = totalHeight - $('.graphLabel'+el.id).height() - $('.graphValue'+el.id).height();
+		if(arr.type=="multi"){
+			maxe = maxMulti(data);
+			totalHeightBar = fieldHeight = totalHeight - $('.graphLabel'+el.id).height();
+			$('.graphValue'+el.id).remove();
+		} else {
+			maxe = max;
+		}
+
+		var maxString = parseInt(maxe).toString();
+		var maxStringLength = maxString.length;
+		var firstChar = maxString.charAt(0);
+		var maxWithZeros = firstChar+Array(maxStringLength).join("0");
+		var maxWithZeros = parseInt(maxWithZeros);
+
+		//finding the range
+		var range = maxWithZeros;
+		var tickCount = 11;
+		var unroundedTickSize = range/(tickCount-1);
+
+		//creating scale with height
+		var scaleHeight = (totalHeightBar*(maxWithZeros/maxe));
+		var individualScaleHeight = scaleHeight/(tickCount-1);
+
+		var scaleHtmlOutput = "<div class='scaleWrapper'><ul>";
+		scaleHtmlOutput += (maxWithZeros==maxString)?"":"<li style='height:"+(totalHeightBar-scaleHeight)+"px'>"+toNumberScale(parseInt(maxe))+"</li>";
+
+		for(var value=maxWithZeros;value>=0;value=value-unroundedTickSize){
+			scaleHtmlOutput += (maxWithZeros==max)?"":"<li style='height:"+individualScaleHeight+"px'>"+toNumberScale(parseInt(value))+"</li>";
+		}
+		scaleHtmlOutput+='</li></div>';
+		$("#graphField0"+el.id).before(scaleHtmlOutput);
  			
  		//creating legend array from legends param
  		for(var l in arr.legends){
@@ -248,6 +282,34 @@
 	 			legend += "</div>";			
 		}
 	};
+
+	//converting value to number scale
+	toNumberScale = function(value){
+		var suffix='';
+		var zeros = 0;
+		valueStr = value.toString();
+		if(valueStr.length > 12){ //trillion
+			suffix = 'T';
+			zeros = 12;
+		}else if(valueStr.length > 9){ //billion
+			suffix = 'G';
+			zeros = 9;
+		}else if(valueStr.length > 6){ //million
+			suffix = 'M';
+			zeros = 6;
+		}else if(valueStr.length > 3){ //thousands
+			suffix = 'k';
+			zeros = 3;
+		}
+		scaleMinValue = parseInt('1'+Array(zeros+1).join("0"));
+		value = parseFloat((value/scaleMinValue).toFixed(2));
+		return value+suffix;
+	}
+	function punctuatedNumber(n){
+  		var s=(''+n).split('.');
+  		s[0]=s[0].split('').reverse().join('').match(/\d{1,3}/gi).join(',').split('').reverse().join('');
+  		return(s.join('.'));
+	}
 
 
 	this.each (
