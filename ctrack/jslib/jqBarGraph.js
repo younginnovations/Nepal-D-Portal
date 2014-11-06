@@ -143,7 +143,7 @@
  			if (lbl == undefined) lbl = arr.lbl;
  		
  			out  = "<div class='graphField"+el.id+"' id='graphField"+unique+"' style='position: absolute'>";
- 			out += "<div class='graphValue"+el.id+"' id='graphValue"+unique+"'>"+prefix+punctuatedNumber(value)+postfix+"</div>";
+ 			out += "<div class='graphValue"+el.id+"' id='graphValue"+unique+"'><span>"+prefix+punctuatedNumber(value)+postfix+"</span><span>"+lbl+"</span></div>";
  			
  			out += "<div class='graphBar"+el.id+"' id='graphFieldBar"+unique+"' style='background-color:"+color+";position: relative; overflow: hidden;'></div>";
 
@@ -183,7 +183,9 @@
  						sv = arr.prefix+valueData[i]+arr.postfix;
  						fs = 12; // font-size is 0 if showValues = false
  					}
- 					o = "<div class='subBars"+el.id+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+"<div style='display:show'><p><span>" + sv + "</span></p></div>"+"</div>";
+ 					punValue = punctuatedNumber(sv);
+ 					o = "<div class='subBars"+el.id+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+"<div style='display:show'><p><span>"+prefix+punctuatedNumber(sv)+"</span></p><p><span>"+arr.legends[i]+" "+lbl+"<span></p></div>"+"</div>";
+ 					o +="<div class='subBarslabel"+el.id+"'>"+arr.legends[i]+"</div>";
  					$('#graphFieldBar'+unique).prepend(o);
  				}
  				$('.subBars'+el.id).mouseover(function(){
@@ -253,14 +255,16 @@
  			leg.push([ arr.colors[l], arr.legends[l], el.id, l ]);
  		}
  		
- 		createLegend(leg); // create legend from array
+ 		if(arr.type != 'multi'){
+ 			createLegend(leg); // create legend from array
  		
- 		//position of legend
- 		if(arr.legend){
-			$(el).append("<div id='legendHolder"+unique+"'></div>");
-	 		$('#legendHolder'+unique).css({ 'width': legendWidth, 'float': 'right', 'text-align' : 'left'});
-	 		$('#legendHolder'+unique).append(legend);
-	 		$('.legendBar'+el.id).css({ 'float':'left', 'margin': 3, 'height': 12, 'width': 20, 'font-size': 0});
+	 		//position of legend
+	 		if(arr.legend){
+				$(el).append("<div id='legendHolder"+unique+"'></div>");
+		 		$('#legendHolder'+unique).css({ 'width': legendWidth, 'float': 'right', 'text-align' : 'left'});
+		 		$('#legendHolder'+unique).append(legend);
+		 		$('.legendBar'+el.id).css({ 'float':'left', 'margin': 3, 'height': 12, 'width': 20, 'font-size': 0});
+	 		}
  		}
  		
  		//position of title
