@@ -184,8 +184,8 @@
  						fs = 12; // font-size is 0 if showValues = false
  					}
  					punValue = punctuatedNumber(sv);
- 					o = "<div class='subBars"+el.id+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+"<div style='display:show'><p><span>"+prefix+punctuatedNumber(sv)+"</span></p><p><span>"+arr.legends[i]+" "+lbl+"<span></p></div>"+"</div>";
- 					o +="<div class='subBarslabel"+el.id+"'>"+arr.legends[i]+"</div>";
+ 					o = "<div class='subBars"+el.id+" "+arr.legends[i].toLowerCase()+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+"<div style='display:show'><p><span>"+prefix+punctuatedNumber(sv)+"</span></p><p><span>"+arr.legends[i]+" "+lbl+"<span></p></div>"+"</div>";
+ 					o +="<div class='subBarslabel"+el.id+" "+arr.legends[i].toLowerCase()+"'>"+arr.legends[i]+"</div>";
  					$('#graphFieldBar'+unique).prepend(o);
  				}
  				$('.subBars'+el.id).mouseover(function(){
