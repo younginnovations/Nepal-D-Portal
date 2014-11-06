@@ -405,7 +405,7 @@ a.beige:hover			{color:#FFF;}
 @keyframes spin {from {transform: rotate(0deg);} to {transform: rotate(359deg);}}
 
 
-.comparison-graph {
+.comparison-graph,.activities_graph_info {
     float: left;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -456,33 +456,36 @@ padding: 24px 0 0;
 }
 
 .graphLabeldonor_comparision_graph_IATI,.graphLabeldonor_comparision_graph_CRS,.graphLabeldonor_comparision_graph_AMP,.graphLabelsector_comparision_graph,.graphLabelsector_budget_graph {
-    height: 24px;
-    margin-top: 2px;
+    height: 30px;
+    margin-top: 8px;
     overflow: hidden;
-    line-height: 24px;
+    line-height: 15px;
     font-size: 10px;
     color: #fff;
 }
 
+.graphLabeldonor_comparision_graph_IATI,.graphLabeldonor_comparision_graph_CRS,.graphLabeldonor_comparision_graph_AMP {
+    position: relative;
+}
+
+.graphLabeldonor_comparision_graph_IATI:after,.graphLabeldonor_comparision_graph_CRS:after,.graphLabeldonor_comparision_graph_AMP:after {
+    position: absolute;
+    content: "...";
+}
+
 .graphLabelsector_comparision_graph,.graphLabelsector_budget_graph,.graphLabeldonor_comparision_graph {
-    height: 25px;
-    margin-top: 5px;
+    /*    height: 25px;*/
+    color: #9d9d9d;
+    font-weight: bold;
+    margin-top: 26px;
 }
 
 .graphBardonor_comparision_graph_IATI,.graphBardonor_comparision_graph_CRS,.graphBardonor_comparision_graph_AMP,
-.subBarssector_comparision_graph,.graphBarsector_budget_graph {
-    width: 34px;
+.subBarssector_comparision_graph,.graphBarsector_budget_graph,.subBarsdonor_comparision_graph {
+    width: 26px!important;
     margin: 0 auto;
-    /*	opacity: 0.9;*/
-    /*
-    background: repeating-linear-gradient(
-    45deg,
-    #606dbc,
-    #606dbc 10px,
-    #465298 10px,
-    #465298 20px
-    )!important;
-    */
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .graphBardonor_comparision_graph_IATI,.graphBardonor_comparision_graph_CRS,.graphBardonor_comparision_graph_AMP {
@@ -503,7 +506,8 @@ padding: 24px 0 0;
     display: none;
 }
 
-.graphValuedonor_comparision_graph_IATI,.graphValuedonor_comparision_graph_CRS,.graphValuedonor_comparision_graph_AMP {
+.graphValuedonor_comparision_graph_IATI,.graphValuedonor_comparision_graph_CRS,.graphValuedonor_comparision_graph_AMP,
+.subBarsdonor_comparision_graph div,.subBarssector_comparision_graph div,.graphValuesector_budget_graph {
     display: none;
     background: rgba(249,255,243,0.95);
     border-radius: 3px;
@@ -517,6 +521,26 @@ padding: 24px 0 0;
     -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+
+.graphValuedonor_comparision_graph_IATI span span,.graphValuedonor_comparision_graph_CRS span span,.graphValuedonor_comparision_graph_AMP span span,
+.graphValuesector_budget_graph span span{
+    font-weight: bold;
+    display: inline-block!important;
+    font-size: 15px!important;
+    padding-bottom: 5px;
+}
+
+.graphValuedonor_comparision_graph_IATI span:last-of-type,.graphValuedonor_comparision_graph_CRS span:last-of-type,.graphValuedonor_comparision_graph_AMP span:last-of-type,
+.subBarsdonor_comparision_graph div p:last-of-type,.subBarssector_comparision_graph div p:last-of-type,.graphValuesector_budget_graph span:last-of-type {
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+    display: block;
 }
 
 .graphValuedonor_comparision_graph_CRS {
@@ -525,24 +549,6 @@ padding: 24px 0 0;
 
 .graphValuedonor_comparision_graph_AMP {
     background: rgba(255,244,235,0.95);
-}
-
-.subBarssector_comparision_graph div,.graphValuesector_budget_graph,.subBarsdonor_comparision_graph div {
-    background: rgba(255,255,255,0.8);
-    border-radius: 3px;
-    border: 1px solid #1269B1;
-    min-width: 90px;
-    padding: 4px;
-    margin-bottom: 4px;
-    margin-left: 10px;
-    display: none;
-}
-
-.subBarssector_comparision_graph div,.subBarsdonor_comparision_graph div {
-    z-index: 1;
-    position: relative;
-    min-width: 106px;
-    text-align: left;
 }
 
 .subBarssector_comparision_graph div,.subBarsdonor_comparision_graph div {
@@ -555,26 +561,29 @@ padding: 24px 0 0;
 }
 
 .graphBarsector_budget_graph {
-    background: #85C8FF!important; 
+    background: #929292!important;
+    width: 68px!important;
 }
 
 .head_wrap+.title_wrap .table_wrap {
     background: transparent;
     margin-top: 40px;
     padding: 0;
+    display: inline-block;
+    width: 100%;
 }
 
-#sector_comparision_graph,#sector_budget_graph {
-    width: 450px!important;
-}
-
-#sector_budget_graph {
+#sector_budget_graph,.activities_graph_info {
+    width: 352px!important;
     float: right;
+    padding-top: 40px;
 }
 
-#donor_comparision_graph {
-    width: 100%!important;
+#sector_comparision_graph,#donor_comparision_graph {
+    width: 512px!important;
+    padding-top: 40px;
 }
+
 
 .graphFieldsector_comparision_graph:nth-child(6) .subBarssector_comparision_graph div {
     margin-left: -90px;
@@ -608,6 +617,16 @@ padding: 24px 0 0;
     left: 37px;
 }
 
+#sector_comparision_graph .scaleWrapper li:after,#donor_comparision_graph .scaleWrapper li:after {
+    width: 460px;
+    left: 50px;
+}
+
+#sector_budget_graph .scaleWrapper li:after {
+    left: 43px;
+    width: 304px;
+}
+
 .scaleWrapper li:last-child {
     height: auto!important;
 }
@@ -619,5 +638,57 @@ padding: 24px 0 0;
 .graphFielddonor_comparision_graph_IATI,.graphFielddonor_comparision_graph_AMP,.graphFielddonor_comparision_graph_CRS {
     width: 44px!important;
     margin-left: 70px!important;
-    bottom: 40px!important;
+    bottom: 28px!important;
 }
+
+.graphFieldsector_comparision_graph,.graphFieldsector_budget_graph,.graphFielddonor_comparision_graph {
+    bottom: 10px!important;
+    margin-left: 70px!important;
+}
+
+.graphFielddonor_comparision_graph {
+    margin-left: 100px!important;
+    bottom: 29px!important;
+}
+
+.subBarslabelsector_comparision_graph,.subBarslabeldonor_comparision_graph {
+    position: absolute;
+    bottom: -20px;
+    font-size: 10px;
+    color: #fff;
+}
+
+.subBarslabelsector_comparision_graph:nth-child(4),.subBarslabeldonor_comparision_graph:nth-child(4) {
+    left: 28px;
+}
+
+.subBarslabelsector_comparision_graph:nth-child(6),.subBarslabeldonor_comparision_graph:nth-child(6) {
+    left: 54px;
+}
+
+#legendHolder2sector_budget_graph {
+    display: none;
+}
+
+.graphBardonor_comparision_graph {
+    overflow: visible!important;
+}
+
+.graphBardonor_comparision_graph div:nth-child(3) {
+    left: 26px!important;
+}
+
+.activities_graph_info {
+    font-size: 14px;
+    color: #fff;
+    line-height: 21px;
+}
+
+.activities_graph_info p {
+    color: #fff;
+    margin-bottom: 13px;
+}
+
+.activities_graph_info p:last-child {
+    margin-bottom: 0;
+} 

@@ -43,10 +43,10 @@ view_sector_activities_graph.ajax = function(args)
 	var getBarChart = function(data)
 	{
 		var content = "<div id='sector_comparision_graph' class='comparison-graph'";
-		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 170px;'>";
+		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 0;'>";
 		content += "<script>$('#sector_comparision_graph').jqBarGraph({";
 		content += "data:"+data+",";
-		content += "colors: ['#1269B1','#2DA9F3','#85C8FF'],";
+		content += "colors: ['#CEE9B1','#65ACFF ','#AF947C '],";
 		content += "type: 'multi',";
 		content += "legends: ['IATI','CRS','AMP'],legend: true,";
 		//content += "animate:false,";
@@ -60,7 +60,7 @@ view_sector_activities_graph.ajax = function(args)
 	{
 		console.log(data);
 		var content = "<div id='sector_budget_graph' class='comparison-graph'";
-		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 170px;'>";
+		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 0px;'>";
 		content += "<script>$('#sector_budget_graph').jqbargraph({";
 		content += "data:"+data+",";
 		//content += "colors: ['#242424','#437346','#97D95C'],";
