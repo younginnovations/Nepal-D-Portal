@@ -36,7 +36,7 @@ view_donors_comparsison.ajax = function(args)
 	var getSimpleBarChart = function(data,donor,color,max_value)
 	{
 		var content = "<div id='donor_comparision_graph_"+donor+"' class='comparison-graph'>";
-		content += "<h3>Top 5 Donor as per " + donor + " 2012 </h3>";
+		content += "<h3>Top <span>5 Donor</span> as per " + "<span>" +donor + "</span> 2012 </h3>";
 		content += "<script>$('#donor_comparision_graph_"+donor+"').jqbargraph({";
 		content += "data:"+data+",";
 		content += "colors:['"+color+"'],legends: ['"+donor+"'] , legend: true,maxValue:"+max_value+",";
