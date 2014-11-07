@@ -153,6 +153,17 @@
  			out += "</div>";
  			
 			$(el).append(out);
+
+			$('.graphBar'+el.id).hover(
+				function(){
+					$(this).siblings('.graphValue'+el.id).show();
+				},
+				function(){
+					$(this).siblings('.graphValue'+el.id).hide();
+				}
+			);
+
+
  			
  			//size of bar
  			totalHeightBar = totalHeight - $('.graphLabel'+el.id).height() - $('.graphValue'+el.id).height(); 
@@ -188,12 +199,14 @@
 					o +="<div class='subBarslabel"+el.id+" "+arr.legends[i].toLowerCase()+"' style='left:"+wid*i+"px;position:absolute;'>"+arr.legends[i]+"</div>";
  					$('#graphFieldBar'+unique).prepend(o);
  				}
- 				$('.subBars'+el.id).mouseover(function(){
-					$(this).children('div').show();
-				});
-				$('.subBars'+el.id).mouseout(function(){
-					$(this).children('div').hide();
-				});
+ 				$('.subBars'+el.id).hover(
+ 					function(){
+						$(this).children('div').show();
+					},
+					function(){
+						$(this).children('div').hide();
+					}
+				);
  			}
  			
  			if(arr.type=='multi')
@@ -243,8 +256,6 @@
 
 		var scaleHtmlOutput = "<div class='scaleWrapper'><ul>";
 		scaleHtmlOutput += (maxWithZeros==maxString)?"":"<li style='height:"+(totalHeightBar-scaleHeight)+"px'>"+toNumberScale(parseInt(maxe))+"</li>";
-		console.log(maxWithZeros);
-		console.log(unroundedTickSize);
 		for(var value=maxWithZeros;value>=0;value=value-unroundedTickSize){
 			scaleHtmlOutput += (maxWithZeros==max)?"":"<li style='height:"+individualScaleHeight+"px'>"+toNumberScale(parseInt(value))+"</li>";
 		}
