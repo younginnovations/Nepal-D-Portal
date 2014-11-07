@@ -47,7 +47,7 @@ view_donors_comparsison.ajax = function(args)
 		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 0px;'>";
 		content += "<script>$('#donor_comparision_graph').jqBarGraph({";
 		content += "data:"+data+",";
-		content += "colors: ['#CEE9B1','#65ACFF ','#AF947C '],";
+		content += "colors: ['#65ACFF','#AF947C','#CEE9B1 '],";
 		content += "type: 'multi',";
 		content += "legends: ['CRS','AMP','IATI'],legend: true,width:512,";
 		//content += "animate:false,";
