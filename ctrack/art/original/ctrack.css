@@ -487,12 +487,24 @@ padding: 24px 0 0;
     border-top-right-radius: 2px;
 }
 
+.graphBardonor_comparision_graph_AMP:hover,.subBarsdonor_comparision_graph.amp:hover,.subBarssector_comparision_graph.amp:hover {
+    background: #93775E!important;
+} 
+
 .graphBardonor_comparision_graph_IATI {
     background: #CEE9B1!important;
 }
 
+.graphBardonor_comparision_graph_IATI:hover,.subBarsdonor_comparision_graph.iati:hover,.subBarssector_comparision_graph.iati:hover {
+    background: #B7D894!important;
+}
+
 .graphBardonor_comparision_graph_CRS {
     background: #65ACFF!important;
+}
+
+.graphBardonor_comparision_graph_CRS:hover,.subBarsdonor_comparision_graph.crs:hover,.subBarssector_comparision_graph.crs:hover {
+    background: #458CDF!important;
 }
 
 #legendHolder4donor_comparision_graph_IATI,#legendHolder4donor_comparision_graph_CRS,#legendHolder4donor_comparision_graph_AMP {
@@ -519,6 +531,13 @@ padding: 24px 0 0;
     z-index: 1;
 }
 
+.graphValuesector_budget_graph {
+    background: rgba(240,235,235,0.95);
+}
+
+.subBarssector_comparision_graph div p:last-of-type,.subBarsdonor_comparision_graph div p:last-of-type {
+    margin-top: 4px;
+}
 
 .graphValuedonor_comparision_graph_IATI span span,.graphValuedonor_comparision_graph_CRS span span,.graphValuedonor_comparision_graph_AMP span span,
 .graphValuesector_budget_graph span span{
@@ -526,6 +545,11 @@ padding: 24px 0 0;
     display: inline-block!important;
     font-size: 15px!important;
     padding-bottom: 5px;
+}
+
+.graphValuedonor_comparision_graph_IATI span:first-of-type,.graphValuedonor_comparision_graph_CRS span:first-of-type,.graphValuedonor_comparision_graph_AMP span:first-of-type,
+.graphValuedonor_comparision_graph_IATI span:first-of-type span,.graphValuedonor_comparision_graph_CRS span:first-of-type span,.graphValuedonor_comparision_graph_AMP span:first-of-type span{
+    color: #333;
 }
 
 .graphValuedonor_comparision_graph_IATI span:last-of-type,.graphValuedonor_comparision_graph_CRS span:last-of-type,.graphValuedonor_comparision_graph_AMP span:last-of-type,
@@ -536,11 +560,15 @@ padding: 24px 0 0;
     display: block;
 }
 
-.graphValuedonor_comparision_graph_CRS,.subBarsdonor_comparision_graph.crs div {
+.subBarsdonor_comparision_graph div p span span,.subBarssector_comparision_graph div p span span {
+    font-weight: bold;
+}
+
+.graphValuedonor_comparision_graph_CRS,.subBarsdonor_comparision_graph.crs div,.subBarssector_comparision_graph.crs div {
     background: rgba(228,241,255,0.95);
 }
 
-.graphValuedonor_comparision_graph_AMP,.subBarsdonor_comparision_graph.amp div {
+.graphValuedonor_comparision_graph_AMP,.subBarsdonor_comparision_graph.amp div,.subBarssector_comparision_graph.amp div {
     background: rgba(255,244,235,0.95);
 }
 
@@ -662,7 +690,6 @@ padding: 24px 0 0;
     display: none;
 }
 
-/*
 .graphBardonor_comparision_graph div:nth-child(3),.graphBardonor_comparision_graph div:nth-child(4) {
     left: 26px!important;
 }
@@ -670,7 +697,6 @@ padding: 24px 0 0;
 .graphBardonor_comparision_graph div:nth-child(1),.graphBardonor_comparision_graph div:nth-child(2) {
     left: 52px!important;
 }
-*/
 
 .activities_graph_info {
     font-size: 14px;
@@ -686,3 +712,4 @@ padding: 24px 0 0;
 .activities_graph_info p:last-child {
     margin-bottom: 0;
 } 
+
