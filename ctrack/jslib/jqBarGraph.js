@@ -108,7 +108,7 @@
 		postfix = arr.postfix;
 		space = arr.barSpace; //space between bars
 		legendWidth = arr.legend ? arr.legendWidth : 0; //width of legend box
-		fieldWidth = ($(el).width()-legendWidth)/data.length + 6; //width of bar
+		fieldWidth = ($(el).width()-legendWidth)/data.length + 8; //width of bar
 		totalHeight =  $(el).height(); //total height of graph box
 		var leg = new Array(); //legends array
 		
@@ -185,7 +185,7 @@
  					}
  					punValue = punctuatedNumber(sv);
  					o = "<div class='subBars"+el.id+" "+arr.legends[i].toLowerCase()+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+"<div style='display:show'><p><span>"+prefix+punctuatedNumber(sv)+"</span></p><p><span>"+arr.legends[i]+" "+lbl+"<span></p></div>"+"</div>";
- 					o +="<div class='subBarslabel"+el.id+" "+arr.legends[i].toLowerCase()+"'>"+arr.legends[i]+"</div>";
+					o +="<div class='subBarslabel"+el.id+" "+arr.legends[i].toLowerCase()+"' style='left:"+wid*i+"px;position:absolute;'>"+arr.legends[i]+"</div>";
  					$('#graphFieldBar'+unique).prepend(o);
  				}
  				$('.subBars'+el.id).mouseover(function(){
