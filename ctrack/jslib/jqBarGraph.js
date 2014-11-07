@@ -180,7 +180,7 @@
  					fs = 0; // font size
 
  					if (arr.showValues){
- 						sv = arr.prefix+valueData[i]+arr.postfix;
+ 						sv = valueData[i];
  						fs = 12; // font-size is 0 if showValues = false
  					}
  					punValue = punctuatedNumber(sv);
@@ -243,7 +243,8 @@
 
 		var scaleHtmlOutput = "<div class='scaleWrapper'><ul>";
 		scaleHtmlOutput += (maxWithZeros==maxString)?"":"<li style='height:"+(totalHeightBar-scaleHeight)+"px'>"+toNumberScale(parseInt(maxe))+"</li>";
-
+		console.log(maxWithZeros);
+		console.log(unroundedTickSize);
 		for(var value=maxWithZeros;value>=0;value=value-unroundedTickSize){
 			scaleHtmlOutput += (maxWithZeros==max)?"":"<li style='height:"+individualScaleHeight+"px'>"+toNumberScale(parseInt(value))+"</li>";
 		}
@@ -310,6 +311,7 @@
 		return value+suffix;
 	}
 	function punctuatedNumber(n){
+		n = +n || 0;
   		var s=(''+n).split('.');
   		s[0]=s[0].split('').reverse().join('').match(/\d{1,3}/gi).join(',').split('').reverse().join('');
   		return(s.join('.'));

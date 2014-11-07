@@ -48,7 +48,7 @@ view_sector_activities_graph.ajax = function(args)
 		content += "data:"+data+",";
 		content += "colors: ['#CEE9B1','#65ACFF ','#AF947C '],";
 		content += "type: 'multi',";
-		content += "legends: ['IATI','CRS','AMP'],legend: true,";
+		content += "legends: ['CRS','AMP','IATI'],legend: true,";
 		//content += "animate:false,";
 		content += "prefix:'USD '});";
 		content += "</script></div>";
@@ -61,10 +61,11 @@ view_sector_activities_graph.ajax = function(args)
 		console.log(data);
 		var content = "<div id='sector_budget_graph' class='comparison-graph'";
 		content += "style='background-color:#F5F5F5; margin:2px 0px 0px 0px;'>";
+		content += "<h3>National Budget Allocated</h3>";
 		content += "<script>$('#sector_budget_graph').jqbargraph({";
 		content += "data:"+data+",";
 		//content += "colors: ['#242424','#437346','#97D95C'],";
-		content += "colors:['#85C8FF'],legends: ['AMP'] , legend: true,";
+		content += "colors:['#85C8FF'],legends: ['National Budget'] , legend: true,";
 		//content += "animate:false,";
 		content += "prefix:'USD '});";
 		content += "</script></div>";
@@ -90,7 +91,12 @@ view_sector_activities_graph.ajax = function(args)
 		});
 		
 		var graph_content = getBarChart(JSON.stringify(sector_array));
-		var budget_graph_content = getSimpleBarChart(JSON.stringify(budget_array));
+		if("0" in budget_array){
+			var budget_graph_content = getSimpleBarChart(JSON.stringify(budget_array));
+		}else{
+			var budget_graph_content = "<div id='sector_budget_graph' class='comparison-graph'>National Budget Alloacation not available</div>";
+		}
+		console.log(budget_array);
 
 		ctrack.chunk("sectors_data_graph", graph_content);
 		ctrack.chunk("sector_budget_graph", budget_graph_content);
@@ -146,7 +152,11 @@ view_sector_activities_graph.ajax = function(args)
 		var callback=function(data){
 			var d = {};
 			d.year = year;
-			d.amount = parseInt(data['rows'][0]['sum_of_percent_of_trans_usd']);
+			if("0" in data['rows']){
+				d.amount = parseInt(data['rows'][0]['sum_of_percent_of_trans_usd']);
+			}else{
+				d.amount = 0;
+			}
 			sector_data_new.iati[d.year]=d.amount;
 
 			display();

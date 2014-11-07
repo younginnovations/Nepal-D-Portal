@@ -49,7 +49,7 @@ view_donors_comparsison.ajax = function(args)
 		content += "data:"+data+",";
 		content += "colors: ['#CEE9B1','#65ACFF ','#AF947C '],";
 		content += "type: 'multi',";
-		content += "legends: ['IATI','CRS','AMP'],legend: true,";
+		content += "legends: ['CRS','AMP','IATI'],legend: true,width:512,";
 		//content += "animate:false,";
 		content += "prefix:'USD '});";
 		content += "</script></div>";
@@ -120,10 +120,12 @@ view_donors_comparsison.ajax = function(args)
 		var callback=function(data){
 			var d = {};
 			d.year = year;
-			d.amount = parseInt(data['rows'][0]['sum_of_percent_of_trans_usd']);
+			if("0" in data['rows']){
+				d.amount = parseInt(data['rows'][0]['sum_of_percent_of_trans_usd']);
+			}else{
+				d.amount = 0;
+			}
 			donor_data_new.iati[d.year]=d.amount;
-
-			
 			display();
 				
 		};
