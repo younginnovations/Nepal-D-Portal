@@ -4,84 +4,42 @@
 	<head>
 <meta charset="UTF-8">
 <title>{welcome_text}</title>
-<script src="{root}jslib/jquery.js"></script>
 <link  href="{root}art/index.css" rel="stylesheet" type="text/css" >
-{ganal}
+<script src="{root}jslib/jquery.js"></script>
+
+
+		<script src="{root}jslib/ctrack_loader.js"></script>
+		<script>
+			ctrack_loader({
+
+// where to load js/css/etc files from, defaults to http://d-portal.org/ 
+// set to / if you are running a ctrack server
+				root:"{root}",
+				
+//				art:"/art/high/",
+
+// if set then use google analytics with this code
+				ga:"UA-6109435-15", 
+
+// replace "this" with content from the portal
+				master:"body",
+
+// displayed data will be limited to this country code
+//				country:"bd",
+
+// displayed data will be limited to this publisher code
+//				publisher:"US",
+
+// these are replaced into the generated html and you can overide *any* display chunk here
+				chunks:{
+//					"country_name":"Bangladesh",
+//					"country_flag":"bdflag.png",
+//					"background_image":"backgroundimage.jpg"
+				}
+
+			});		
+		</script>
+
 	</head> 
 <body>
-<div class="portal">
-	<div class="main_wrap">
-		<div id="background_image"></div>
-		<div class="overlay">
-			<div class="default center">
-				<img src="{root}art/dp_logo.index.png" width="600" height="250" alt="D-Portal logo"/>
-				<div class="tongue_wrap">{tongue_select}</div>
-				<div class="tag">{tagline_text}</div>
-				<div class="default pad40">
-					<div class="third">
-						<a class="path no">
-							<span class="path_title install">{install_button_text}</span>
-							<span class="path_txt">{install_info_text} <i>{soon_text}</i></span>
-						</a>
-					</div><div class="third">
-						<a href="#explore" class="path">
-							<span class="path_title explore">{explore_button_text}</span>
-							<span class="path_txt">{explore_info_text}</span>
-						</a>
-					</div><div class="third">
-						<a href="https://github.com/devinit/D-Portal" target="_blank" class="path">
-							<span class="path_title develop">{develop_button_text}</span>
-							<span class="path_txt">{develop_info_text}</span>
-						</a>
-					</div>
-				</div>
-				<div class="description_wrap">
-					<div class="description">
-						<span class="title">{index_title_text}</span>
-						<p><span class="bold">d-portal.org</span> {index_paragraph1_text}</p>
-						<p>{index_paragraph2_text}</p>
-					</div><div class="description">
-						<span class="title">{links_title_text}</span>
-						<a href="{tongue_root}news/posts.html" class="read">&gt; {news_page_text}</a>
-						<a href="{tongue_root}about.html" class="read">&gt; {read_more_text}</a>
-						<a href="{tongue_root}publishers.html" class="path publisher">{publisher_portal_text}</a>
-						<span class="title">{explore_title_text}</span>
-						<p><b>{explore_paragraph1_text}</b>{explore_paragraph2_text}</p>
-					</div>
-				</div>
-				<div class="country_menu_wrap">
-					<span id="explore"></span>
-					<div class="country_menu_list_wrap">
-						<ul class="country_menu_list">{countries:country_select}</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="footer_wrap">
-	<div class="footer">
-		<div class="footer_link"><a href="mailto:queries@d-portal.org" title="{footer1_tip_text}">
-			{footer1_text}</a>
-		</div><div class="footer_link top"><a onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
-			{footer2_text}</a>
-		</div><div class="footer_link about"><a href="{tongue_root}about.html">
-			{footer3_text}</a>
-		</div>
-	</div>
-	</div>
-</div>
-</body>
-</html>
 
-#country_select
-<li>
-	<a class="country_code" href="{root}ctrack.html?country={it.id}&tongue={tongue}">
-		<span class="select_wrap">
-			<img src="{root}art/flag/{it.cc}.png" alt="{it.name} {flag_alt_text}"/>
-		</span><span class="select_wrap countryid">
-			{it.id}
-		</span><span class="select_wrap countryname">
-			{it.name}
-		</span>
-	</a>
-</li>
